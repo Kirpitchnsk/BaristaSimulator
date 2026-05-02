@@ -18,8 +18,9 @@ MonoBehaviour:
     <ClientIcon>k__BackingField: {fileID: 21300000, guid: d7d7249fd1bb59e46b8dc58978b58726, type: 3}
     <ItemId>k__BackingField:
       _value: DefaultCoffeeCup
+    <CookTimeoutSeconds>k__BackingField: 40
   _location:
-    m_AssetGUID: 
+    m_AssetGUID: 86b804d8b0b69d94bbdd2f539a6001df
     m_SubObjectName: 
     m_SubObjectType: 
     m_SubObjectGUID: 

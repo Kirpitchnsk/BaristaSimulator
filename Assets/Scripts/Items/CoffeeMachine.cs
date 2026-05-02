@@ -1,7 +1,3 @@
-namespace SibGameJam2026
-{
-	public class CoffeeMachine : ItemMerger
-	{
-		
-	}
+namespace SibGameJam2026 {
+	public class CoffeeMachine : ItemMerger { }
 }

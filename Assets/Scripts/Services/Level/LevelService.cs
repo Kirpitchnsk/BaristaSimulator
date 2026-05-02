@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Arenar.Services.UI;
 using SibGameJam2026.Cameras;
 using SibGameJam2026.Characters;
@@ -8,6 +9,8 @@ using SibGameJam2026.Items;
 using SibGameJam2026.MergeService;
 using SibGameJam2026.Settings;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 using Zenject;
 
 namespace SibGameJam2026.Services {
@@ -32,7 +35,12 @@ namespace SibGameJam2026.Services {
 		private int _cookSuccessCount;
 		private int _cookFailureCount;
 		private float _activeCookDeadline;
+		private float _activeCookDuration;
 		private bool _isCookTimerRunning;
+		private GameObject _activeLevelLocationInstance;
+		private AsyncOperationHandle<GameObject> _activeLevelLocationHandle;
+		private bool _hasActiveLevelLocationHandle;
+		private int _locationLoadVersion;
 
 		public int CookFailureCount => _cookFailureCount;
 		public int CookSuccessCount => _cookSuccessCount;
@@ -58,26 +66,41 @@ namespace SibGameJam2026.Services {
 
 		public void BeginLevel(string levelKey = null) {
 			_activeLevel = ResolveLevel(levelKey);
+			UnloadLevelLocation();
 
 			_nextClientIndex = 0;
 			_currentActiveClientIndex = -1;
 			_activeClientNpcState = null;
 			_cookSuccessCount = 0;
 			_cookFailureCount = 0;
+			_activeCookDuration = 0f;
 			_isCookTimerRunning = false;
 
 			_clientExpectedDishByInstanceId.Clear();
 
 			if (_activeLevel == null)
 				Debug.LogWarning($"[{nameof(LevelService)}] Уровень не найден (ключ '{levelKey}'). Очередь NPC не запущена.");
-			else
+			else {
+				_locationLoadVersion++;
+				_ = LoadLevelLocationAsync(_activeLevel, _locationLoadVersion);
 				ResetGameplayUi(_activeLevel);
+			}
 
 			var player = _characterFactory.Create(ECharacterType.Player, Vector3.zero);
 			var cameraParent = player.Data.CameraPoint != null ? player.Data.CameraPoint : player.transform;
 			_cameraService.AttachActiveCameraTo(cameraParent);
 
 			TrySpawnNextClientNpc();
+		}
+
+		public void EndLevel() {
+			_isCookTimerRunning = false;
+			_activeCookDuration = 0f;
+			_activeClientNpcState = null;
+			_currentActiveClientIndex = -1;
+			_clientExpectedDishByInstanceId.Clear();
+			_gameplayCanvasController.Value?.SetCookTimerActive(false);
+			UnloadLevelLocation();
 		}
 
 		public void AssignCookingDishForClient(ACharacter clientNpc) {
@@ -95,12 +118,18 @@ namespace SibGameJam2026.Services {
 		}
 
 		public void Tick() {
+			_gameplayCanvasController.Value?.UpdateFocusItemMark();
+			_gameplayCanvasController.Value?.SetCookTimerActive(_isCookTimerRunning);
 			if (!_isCookTimerRunning)
 				return;
-			if (Time.time < _activeCookDeadline)
+
+			var remaining = Mathf.Max(0f, _activeCookDeadline - Time.time);
+			_gameplayCanvasController.Value?.UpdateCookTimer(remaining, _activeCookDuration);
+			if (remaining > 0f)
 				return;
 
 			_isCookTimerRunning = false;
+			_gameplayCanvasController.Value?.SetCookTimerActive(false);
 			SetCookFailed();
 			if (_activeClientNpcState != null && _activeClientNpcState.State == EClientState.WaitCooking)
 				_activeClientNpcState.SetState(EClientState.NonTransformed);
@@ -118,26 +147,47 @@ namespace SibGameJam2026.Services {
 			_gameplayCanvasController.Value?.SetClientCookFailed(_currentActiveClientIndex);
 		}
 
+		public void SetCookSuccess() {
+			if (_currentActiveClientIndex < 0)
+				return;
+
+			var list = _activeLevel?.ClientData;
+			if (list == null || _currentActiveClientIndex >= list.Count)
+				return;
+
+			_cookSuccessCount++;
+			_gameplayCanvasController.Value?.SetClientCookSuccess(_currentActiveClientIndex);
+		}
+
 		public void StartActiveClientCookingTimer() {
 			if (_activeLevel == null || _currentActiveClientIndex < 0) {
 				_isCookTimerRunning = false;
+				_activeCookDuration = 0f;
+				_gameplayCanvasController.Value?.SetCookTimerActive(false);
 				return;
 			}
 
 			var clients = _activeLevel.ClientData;
 			if (clients == null || _currentActiveClientIndex >= clients.Count) {
 				_isCookTimerRunning = false;
+				_activeCookDuration = 0f;
+				_gameplayCanvasController.Value?.SetCookTimerActive(false);
 				return;
 			}
 
 			var timeoutSeconds = clients[_currentActiveClientIndex].CookTimeoutSeconds;
 			if (timeoutSeconds <= 0f) {
 				_isCookTimerRunning = false;
+				_activeCookDuration = 0f;
+				_gameplayCanvasController.Value?.SetCookTimerActive(false);
 				return;
 			}
 
+			_activeCookDuration = timeoutSeconds;
 			_activeCookDeadline = Time.time + timeoutSeconds;
 			_isCookTimerRunning = true;
+			_gameplayCanvasController.Value?.SetCookTimerActive(true);
+			_gameplayCanvasController.Value?.UpdateCookTimer(_activeCookDuration, _activeCookDuration);
 		}
 
 		public void PresentClientOrderUi(ACharacter clientNpc) {
@@ -192,8 +242,11 @@ namespace SibGameJam2026.Services {
 			if (character.TryGetComponent<INpcControlStateCharacterComponent>(out var npcState)) {
 				_activeClientNpcState = npcState;
 				void Handler(EClientState state) {
-					if (state != EClientState.WaitCooking)
+					if (state != EClientState.WaitCooking) {
 						_isCookTimerRunning = false;
+						_activeCookDuration = 0f;
+						_gameplayCanvasController.Value?.SetCookTimerActive(false);
+					}
 					if (state != EClientState.Finished)
 						return;
 					npcState.StateChanged -= Handler;
@@ -227,6 +280,42 @@ namespace SibGameJam2026.Services {
 
 		private void ResetGameplayUi(GameSettingsData gameData) {
 			_gameplayCanvasController.Value?.SetupForLevel(gameData);
+		}
+
+		private async Task LoadLevelLocationAsync(GameSettingsData levelData, int loadVersion) {
+			if (levelData == null || levelData.Location == null || !levelData.Location.RuntimeKeyIsValid())
+				return;
+
+			try {
+				var handle = levelData.Location.InstantiateAsync(Vector3.zero, Quaternion.identity);
+				var instance = await handle.Task;
+
+				// Если в процессе загрузки уровень сменился, выгружаем устаревший инстанс.
+				if (loadVersion != _locationLoadVersion) {
+					Addressables.ReleaseInstance(handle);
+					return;
+				}
+
+				_activeLevelLocationHandle = handle;
+				_hasActiveLevelLocationHandle = true;
+				_activeLevelLocationInstance = instance;
+
+				if (_activeLevelLocationInstance != null)
+					_activeLevelLocationInstance.transform.position = Vector3.zero;
+			} catch (Exception e) {
+				Debug.LogError($"[{nameof(LevelService)}] Не удалось загрузить локацию '{levelData.Key}': {e.Message}");
+			}
+		}
+
+		private void UnloadLevelLocation() {
+			if (_hasActiveLevelLocationHandle) {
+				Addressables.ReleaseInstance(_activeLevelLocationHandle);
+				_hasActiveLevelLocationHandle = false;
+			} else if (_activeLevelLocationInstance != null) {
+				UnityEngine.Object.Destroy(_activeLevelLocationInstance);
+			}
+
+			_activeLevelLocationInstance = null;
 		}
 	}
 }

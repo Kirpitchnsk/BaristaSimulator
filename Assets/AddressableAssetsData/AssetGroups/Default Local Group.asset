@@ -25,6 +25,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3befedcdb4fe24a48ad5bbb3bba81cce
+    m_Address: Assets/Content/Prefabs/Locations/Kosmos World.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5abd3cfed64b28b439d8d9f74415f9e4
     m_Address: Assets/Content/Prefabs/ItemVisuals/Honey_ItemVisual.prefab
     m_ReadOnly: 0
@@ -42,6 +47,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 85caaec4cd51af44fb2e9bac74e5909d
     m_Address: Assets/Content/Prefabs/ItemVisuals/Milk_ItemVisual.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 86b804d8b0b69d94bbdd2f539a6001df
+    m_Address: Assets/Content/Prefabs/Locations/Simple world.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

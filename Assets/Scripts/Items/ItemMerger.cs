@@ -9,6 +9,8 @@ using Zenject;
 
 namespace SibGameJam2026 {
 	public abstract class ItemMerger : AInteractItemVisual {
+		[SerializeField] private string _name = "Кофе машинка";
+		
 		[SerializeField] private List<EItemType> _supportedInputTypes;
 		[SerializeField] private int _maxBufferedItems = 3;
 		[SerializeField] private float _processingTimeSeconds = 5f;
@@ -34,6 +36,9 @@ namespace SibGameJam2026 {
 		private bool _isProcessing;
 		private float _remainingTime;
 		private ItemProcessingSquashState _squashState;
+		
+		public override string InteractItemName => _name;
+		public int ItemsCount => _bufferedItems.Count;
 
 		[Inject]
 		private void Construct(IMergeSystem mergeSystem, ItemsFactory itemsFactory, ItemsDatabase itemsDatabase) {

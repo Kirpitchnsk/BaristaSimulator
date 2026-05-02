@@ -2,9 +2,6 @@ using System;
 using UnityEngine;
 
 namespace SibGameJam2026.Characters {
-	/// <summary>
-	/// Настройки стейт-машины NPC, собираются при спавне из <see cref="CarManager"/> (точки заказа и возврата в пул).
-	/// </summary>
 	public sealed class NpcControlStateAuthoring {
 		public Transform OrderPoint { get; }
 		public Transform ExitPoint { get; }

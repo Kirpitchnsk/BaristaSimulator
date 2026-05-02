@@ -6,10 +6,13 @@ using Zenject;
 
 namespace SibGameJam2026 {
 	public class ItemSpawner : AInteractItemVisual {
+		[SerializeField] private string _name;
 		[SerializeField] private ItemId _itemId;
 
 		private ItemsFactory _itemsFactory;
 
+		public override string InteractItemName => _name;
+		
 		[Inject]
 		private void Construct(ItemsFactory itemsFactory) {
 			_itemsFactory = itemsFactory;
