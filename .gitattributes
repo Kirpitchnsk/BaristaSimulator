@@ -1,0 +1,87 @@
+# Атрибуты Git для Unity-проектов
+#
+# Версия от сообщества GameCI под лицензией MIT - https://game.ci
+# Актуальная версия: https://gist.github.com/webbertakken/ff250a0d5e59a8aae961c2e509c07fbc
+
+# Нормализация окончаний строк для всех текстовых файлов
+* text=auto
+# Специальный diff для C# файлов
+*.cs diff=csharp
+# Макрос для YAML-файлов Unity, для которых возможно слияние
+[attr]unity-yaml-file -text merge=unityyamlmerge linguist-generated
+# Применяем макрос ко всем файлам Unity, поддерживающим слияние
+*.unity               unity-yaml-file
+*.prefab              unity-yaml-file
+*.asset               unity-yaml-file
+*.mat                 unity-yaml-file
+*.meta                unity-yaml-file
+*.anim                unity-yaml-file
+*.controller          unity-yaml-file
+*.physicMaterial      unity-yaml-file
+*.physicsMaterial2D   unity-yaml-file
+# --- Настройки для Git LFS (Large File Storage) ---
+# Макрос для файлов, которые будут храниться в LFS
+[attr]lfs-file filter=lfs diff=lfs merge=lfs -text
+# 3D-модели и анимация
+*.fbx      lfs-file
+*.FBX      lfs-file
+*.obj      lfs-file
+*.blend    lfs-file
+*.3ds      lfs-file
+*.dae      lfs-file
+*.glb      lfs-file
+*.gltf     lfs-file
+*.ma       lfs-file
+*.max      lfs-file
+*.mb       lfs-file
+# Изображения и текстуры
+*.png      lfs-file
+*.jpg      lfs-file
+*.jpeg     lfs-file
+*.psd      lfs-file
+*.tga      lfs-file
+*.tif      lfs-file
+*.tiff     lfs-file
+*.bmp      lfs-file
+*.dds      lfs-file
+*.exr      lfs-file
+*.hdr      lfs-file
+*.gif      lfs-file
+*.svg      lfs-file
+*.webp     lfs-file
+*.ai       lfs-file
+# Аудиофайлы
+*.wav      lfs-file
+*.mp3      lfs-file
+*.ogg      lfs-file
+*.aif      lfs-file
+*.aiff     lfs-file
+*.flac     lfs-file
+*.mod      lfs-file
+*.it       lfs-file
+*.s3m      lfs-file
+*.xm       lfs-file
+# Видеофайлы
+*.mp4      lfs-file
+*.mov      lfs-file
+*.avi      lfs-file
+*.mpg      lfs-file
+*.mpeg     lfs-file
+*.webm     lfs-file
+# Шрифты
+*.ttf      lfs-file
+*.otf      lfs-file
+# Документы и архивы
+*.pdf      lfs-file
+*.zip      lfs-file
+*.rar      lfs-file
+*.7z       lfs-file
+# Файлы, создаваемые Unity, которые могут быть очень большими
+*.bundle               lfs-file
+*.cubemap              lfs-file
+*.unitypackage         lfs-file
+*-[Nn]av[Mm]esh.asset  lfs-file
+*-[Tt]errain.asset     lfs-file
+*LightingData.asset    lfs-file
+*OcclusionCullingData.asset lfs-file
+* !text !filter !merge !diff

@@ -1,0 +1,231 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a353191601c90c14d830171f7a66f863, type: 3}
+  m_Name: ItemsDatabase
+  m_EditorClassIdentifier: Assembly-CSharp::SibGameJam2026.MergeService.ItemsDatabase
+  _items:
+  - ItemId:
+      _value: Water
+    Name: "\u0412\u043E\u0434\u0430"
+    Description: "\u041F\u0440\u043E\u0441\u0442\u0430\u044F \u0445\u043E\u043B\u043E\u0434\u043D\u0430\u044F
+      \u0432\u043E\u0434\u0430"
+    ItemType: 2
+    Icon: {fileID: 0}
+    Prefab:
+      m_AssetGUID: 8bc85407c3c9e1b4c9d653d14105fcc0
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - ItemId:
+      _value: HotWater
+    Name: "\u0413\u043E\u0440\u044F\u0447\u0430\u044F \u0432\u043E\u0434\u0430"
+    Description: "\u041F\u0440\u043E\u0441\u0442\u0430\u044F \u0445\u043E\u043B\u043E\u0434\u043D\u0430\u044F
+      \u0432\u043E\u0434\u0430"
+    ItemType: 2
+    Icon: {fileID: 0}
+    Prefab:
+      m_AssetGUID: 759e5f9523aff664aada567837617551
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - ItemId:
+      _value: CoffeeBeans
+    Name: "\u041A\u043E\u0444\u0435\u0439\u043D\u044B\u0435 \u0437\u0435\u0440\u043D\u0430"
+    Description: "\u041D\u0430\u0431\u043E\u0440 \u043A\u043E\u0444\u0435\u0439\u043D\u044B\u0445
+      \u0437\u0435\u0440\u0435\u043D"
+    ItemType: 1
+    Icon: {fileID: 0}
+    Prefab:
+      m_AssetGUID: fbc25359ea8501646b140dc51893a74d
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - ItemId:
+      _value: CoffeeBeansCrushed
+    Name: "\u041C\u043E\u043B\u043E\u0442\u044B\u0435 \u0437\u0435\u0440\u043D\u0430"
+    Description: "\u041A\u043E\u0444\u0435 \u0434\u043B\u044F \u0437\u0430\u0432\u0430\u0440\u043A\u0438"
+    ItemType: 1
+    Icon: {fileID: 0}
+    Prefab:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - ItemId:
+      _value: DefaultCoffeeCup
+    Name: "\u041E\u0431\u044B\u0447\u043D\u044B\u0439 \u043A\u043E\u0444\u0435"
+    Description: "\u041E\u0431\u044B\u0447\u043D\u044B\u0439 \u043A\u043E\u0444\u0435
+      \u0431\u0435\u0437 \u043F\u0440\u0435\u043A\u0440\u0430\u0441"
+    ItemType: 3
+    Icon: {fileID: 0}
+    Prefab:
+      m_AssetGUID: 8b83ca912d613f145ab2deee727df8b3
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - ItemId:
+      _value: Milk
+    Name: "\u041C\u043E\u043B\u043E\u043A\u043E"
+    Description: "\u041F\u0440\u043E\u0445\u043B\u0430\u0434\u043D\u043E\u0435 \u043C\u043E\u043B\u043E\u043A\u043E"
+    ItemType: 2
+    Icon: {fileID: 0}
+    Prefab:
+      m_AssetGUID: 85caaec4cd51af44fb2e9bac74e5909d
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - ItemId:
+      _value: Sugar
+    Name: "\u0421\u0430\u0445\u0430\u0440"
+    Description: "\u0421\u043B\u0430\u0434\u043A\u0438\u0439 \u043F\u043E\u0440\u043E\u0448\u043E\u043A"
+    ItemType: 4
+    Icon: {fileID: 0}
+    Prefab:
+      m_AssetGUID: 2140dedce2406c347a0c16bc837fb41b
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - ItemId:
+      _value: Ice
+    Name: "\u041B\u0435\u0434"
+    Description: "\u0412 \u0432\u0438\u0434\u0435 \u043A\u0443\u0431\u0438\u043A\u043E\u0432"
+    ItemType: 4
+    Icon: {fileID: 0}
+    Prefab:
+      m_AssetGUID: 66bc0bd1bcab798429ec6c702c2a0940
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - ItemId:
+      _value: Honey
+    Name: "\u041C\u0435\u0434"
+    Description: "\u0421\u043B\u0430\u0434\u043A\u0430\u044F \u0442\u044F\u043D\u0443\u0447\u043A\u0430"
+    ItemType: 4
+    Icon: {fileID: 0}
+    Prefab:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - ItemId:
+      _value: Lemon
+    Name: "\u041B\u0438\u043C\u043E\u043D"
+    Description: "\u042F\u0440\u043A\u043E-\u0436\u0435\u043B\u0442\u044B\u0435 \u0437\u0430\u0432\u0438\u0442\u043A\u0438"
+    ItemType: 4
+    Icon: {fileID: 0}
+    Prefab:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - ItemId:
+      _value: ChocolateChips
+    Name: "\u0428\u043E\u043A\u043E\u043B\u0430\u0434\u043D\u0430\u044F \u043A\u0440\u043E\u0448\u043A\u0430"
+    Description: "\u0420\u0430\u0441\u0441\u044B\u043F\u0447\u0430\u0442\u044B\u0439
+      \u0448\u043E\u043A\u043E\u043B\u0430\u0434"
+    ItemType: 4
+    Icon: {fileID: 0}
+    Prefab:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - ItemId:
+      _value: Cinnamon
+    Name: "\u041A\u043E\u0440\u0438\u0446\u0430"
+    Description: "\u0412 \u0432\u0438\u0434\u0435 \u043F\u0430\u043B\u043E\u0447\u0435\u043A"
+    ItemType: 4
+    Icon: {fileID: 0}
+    Prefab:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - ItemId:
+      _value: vanilla pod
+    Name: "\u0432\u0430\u043D\u0438\u043B\u044C\u043D\u044B\u0439 \u0441\u0442\u0440\u0443\u0447\u043E\u043A"
+    Description: "\u0427\u0451\u0440\u043D\u044B\u0435 \u0442\u043E\u043D\u043A\u0438\u0435
+      \u043F\u0430\u043B\u043E\u0447\u043A\u0438 \u0441 \u0431\u0435\u043B\u044B\u043C\u0438
+      \u0441\u0435\u043C\u0435\u043D\u0430\u043C\u0438 \u0432\u043D\u0443\u0442\u0440\u0438"
+    ItemType: 4
+    Icon: {fileID: 0}
+    Prefab:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - ItemId:
+      _value: HoneyCaramel
+    Name: "\u041C\u0435\u0434\u043E\u0432\u0430\u044F \u043A\u0430\u0440\u0430\u043C\u0435\u043B\u044C"
+    Description: "\u043C\u0451\u0434 + \u0441\u0430\u0445\u0430\u0440 + \u043A\u043E\u0440\u0438\u0446\u0430
+      \u0432 \u043F\u0430\u043B\u043E\u0447\u043A\u0430\u0445"
+    ItemType: 4
+    Icon: {fileID: 0}
+    Prefab:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - ItemId:
+      _value: LemonGranite
+    Name: "\u041B\u0438\u043C\u043E\u043D\u043D\u044B\u0439 \u0433\u0440\u0430\u043D\u0438\u0442"
+    Description: "\u041B\u0438\u043C\u043E\u043D + \u043B\u0451\u0434 + \u043C\u043E\u043B\u043E\u043A\u043E
+      + \u0432\u0430\u043D\u0438\u043B\u044C\u043D\u044B\u0439 \u0441\u0442\u0440\u0443\u0447\u043E\u043A"
+    ItemType: 4
+    Icon: {fileID: 0}
+    Prefab:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - ItemId:
+      _value: ChocolateSyrup
+    Name: "\u0428\u043E\u043A\u043E\u043B\u0430\u0434\u043D\u044B\u0439 \u0441\u0438\u0440\u043E\u043F"
+    Description: "\u0448\u043E\u043A\u043E\u043B\u0430\u0434\u043D\u0430\u044F \u043A\u0440\u043E\u0448\u043A\u0430
+      + \u043C\u043E\u043B\u043E\u043A\u043E + \u041C\u0435\u043B\u044C\u0447\u0435\u043D\u044B\u0439
+      \u043A\u043E\u0444\u0435"
+    ItemType: 4
+    Icon: {fileID: 0}
+    Prefab:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - ItemId:
+      _value: VanillaSnow
+    Name: "\u0412\u0430\u043D\u0438\u043B\u044C\u043D\u044B\u0439 \u0441\u043D\u0435\u0433"
+    Description: "\u0412\u0430\u043D\u0438\u043B\u044C\u043D\u044B\u0439 \u0441\u0442\u0440\u0443\u0447\u043E\u043A
+      + \u043C\u043E\u043B\u043E\u043A\u043E + \u043B\u0451\u0434 + \u0441\u0430\u0445\u0430\u0440"
+    ItemType: 4
+    Icon: {fileID: 0}
+    Prefab:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0

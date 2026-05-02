@@ -1,0 +1,68 @@
+# Этот файл должен находиться в корневой папке вашего Unity-проекта
+#
+# Актуальную версию всегда можно найти здесь:
+# https://github.com/github/gitignore/blob/main/Unity.gitignore
+#
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+
+# Папки MemoryCaptures и Recordings могут занимать очень много места
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+
+# Ресурсы плагина Asset Store (раскомментируйте, если используете)
+# /[Aa]ssets/AssetStoreTools*
+
+# Автоматически сгенерированные файлы JetBrains Rider
+/[Aa]ssets/Plugins/Editor/JetBrains*
+
+# Папки кэша Visual Studio и Gradle
+.vs/
+.gradle/
+
+# Файлы проектов и решений для различных IDE
+ExportedObj/
+.consulo/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Мета-файлы, создаваемые Unity
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# Файлы, создаваемые при падении Unity
+sysinfo.txt
+
+# Файлы сборок и пакетов
+*.apk
+*.aab
+*.unitypackage
+*.app
+
+# Файл свойств Crashlytics
+crashlytics-build.properties
+
+# Упакованные Addressables
+/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+
+# Временные файлы Android
+/[Aa]ssets/[Ss]treamingAssets/aa.meta
+/[Aa]ssets/[Ss]treamingAssets/aa/*
