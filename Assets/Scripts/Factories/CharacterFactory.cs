@@ -87,7 +87,7 @@ namespace SibGameJam2026.Characters {
 				{ typeof(IMovementCharacterComponent), new NpcMovementCharacterComponent(character, entry) },
 				{
 					typeof(INpcControlStateCharacterComponent),
-					new NpcControlStateCharacterComponent(character, authoring, _levelService)
+					new NpcControlStateCharacterComponent(character, authoring)
 				},
 				{
 					typeof(IInteractableCharacterComponent),

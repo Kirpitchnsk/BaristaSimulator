@@ -16,6 +16,7 @@ namespace SibGameJam2026.Services {
 		bool TryGetExpectedDish(ACharacter clientNpc, out ItemId dishId);
 
 		void PresentClientOrderUi(ACharacter clientNpc);
+		void StartActiveClientCookingTimer();
 
 		/// <summary>Истёк таймер готовки у активного клиента — учёт провала и индикация в UI.</summary>
 		void SetCookFailed();

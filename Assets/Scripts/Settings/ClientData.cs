@@ -9,5 +9,6 @@ namespace SibGameJam2026.Settings {
 		[field: SerializeField] public ECharacterType ECharacterType { get; private set; }
 		[field: SerializeField] public Sprite ClientIcon { get; private set; }
 		[field: SerializeField] public ItemId ItemId { get; private set; }
+		[field: SerializeField] public float CookTimeoutSeconds { get; private set; } = 10f;
 	}
 }

@@ -33,6 +33,7 @@ namespace SibGameJam2026.Characters.Components {
 					_levelService.AssignCookingDishForClient(_character);
 					_levelService.PresentClientOrderUi(_character);
 					_npcState.SetState(EClientState.WaitCooking);
+					_levelService.StartActiveClientCookingTimer();
 					break;
 				case EClientState.WaitCooking:
 					if (!_levelService.TryGetExpectedDish(_character, out var expectedDish)) {

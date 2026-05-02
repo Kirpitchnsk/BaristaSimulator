@@ -10,7 +10,6 @@ namespace SibGameJam2026.Characters {
 		public Transform ExitPoint { get; }
 		public float ArriveDistance { get; }
 		public float MoveSpeed { get; }
-		public float CookTimeoutSeconds { get; }
 		public GameObject NormalVisualRoot { get; }
 		public GameObject TransformedVisualRoot { get; }
 		public bool DestroyOnExit { get; }
@@ -25,7 +24,6 @@ namespace SibGameJam2026.Characters {
 			CarManager carManager,
 			float arriveDistance = 0.6f,
 			float moveSpeed = 3.5f,
-			float cookTimeoutSeconds = 0f,
 			GameObject normalVisualRoot = null,
 			GameObject transformedVisualRoot = null,
 			bool destroyOnExit = true
@@ -37,7 +35,6 @@ namespace SibGameJam2026.Characters {
 			ExitPoint = carManager.ReturnToPoolPoint;
 			ArriveDistance = arriveDistance;
 			MoveSpeed = moveSpeed;
-			CookTimeoutSeconds = cookTimeoutSeconds;
 			NormalVisualRoot = normalVisualRoot;
 			TransformedVisualRoot = transformedVisualRoot;
 			DestroyOnExit = destroyOnExit;
