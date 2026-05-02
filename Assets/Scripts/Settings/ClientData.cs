@@ -7,6 +7,7 @@ namespace SibGameJam2026.Settings {
 	[Serializable]
 	public class ClientData {
 		[field: SerializeField] public ECharacterType ECharacterType { get; private set; }
+		[field: SerializeField] public Sprite ClientIcon { get; private set; }
 		[field: SerializeField] public ItemId ItemId { get; private set; }
 	}
 }

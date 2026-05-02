@@ -1,47 +1,45 @@
 using SibGameJam2026.Cameras;
-using SibGameJam2026.Characters;
 using UnityEngine;
 using Zenject;
 
 namespace SibGameJam2026.Services {
 	public class GameService : IGameService, ITickable {
 		private IInventoryService _inventoryService;
-		private readonly ACharacter.Factory _characterFactory;
-		private readonly ICameraService _cameraService;
+		private readonly ILevelService _levelService;
 		private readonly IInputService _inputService;
-		
+		private readonly ICameraService _cameraService;
+
 		public GameService(
 			IInventoryService inventoryService,
-			ACharacter.Factory characterFactory,
-			ICameraService cameraService,
-			IInputService inputService) {
+			ILevelService levelService,
+			IInputService inputService,
+			ICameraService cameraService
+		) {
 			_inventoryService = inventoryService;
-			_characterFactory = characterFactory;
-			_cameraService = cameraService;
+			_levelService = levelService;
 			_inputService = inputService;
+			_cameraService = cameraService;
 			Debug.Log("GameService is Initialized" + inventoryService);
 		}
-		
+
 		public bool IsGameActive { get; private set; } = false;
 
 		public void Tick() {
 		}
-		
-		public void StartGame() {
+
+		public void StartGame(string levelKey = null) {
 			if (IsGameActive)
 				return;
-			
-			var character = _characterFactory.Create(ECharacterType.Player, Vector3.zero);
-			var cameraParent = character.Data.CameraPoint != null ? character.Data.CameraPoint : character.transform;
-			_cameraService.CreateCamera(ECameraType.FirstPerson, cameraParent);
+
+			_cameraService.EnsureGameplayCamera();
+			_levelService.BeginLevel(levelKey);
 
 			_inventoryService.Add(1);
 			_inputService.SwitchActionMap("PlayerInputMap");
 			IsGameActive = true;
 		}
 
-		public void CompleteGame()
-		{
+		public void CompleteGame() {
 			IsGameActive = false;
 		}
 	}

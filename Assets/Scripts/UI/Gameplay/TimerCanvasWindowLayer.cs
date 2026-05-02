@@ -6,6 +6,9 @@ namespace Arenar.Services.UI {
     public class TimerCanvasWindowLayer : CanvasWindowLayer {
         [SerializeField] private Image _timerImage;
 
+        public void SetLayerEnabled(bool isEnabled) {
+            gameObject.SetActive(isEnabled);
+        }
 
         public void SetTimerProgress(float progress, float progressMax) {
             _timerImage.fillAmount = progress / progressMax;
