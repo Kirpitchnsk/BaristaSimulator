@@ -16,7 +16,11 @@ namespace SibGameJam2026.Characters.Components {
 		}
 
 		public void Interact() {
-			if (!_cameraService.TryGetActiveCamera(out var activeCamera))
+			if (!_cameraService.TryGetActiveCamera(out var controller))
+				return;
+
+			var activeCamera = controller.GetComponent<Camera>();
+			if (activeCamera == null)
 				return;
 
 			var ray = activeCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));

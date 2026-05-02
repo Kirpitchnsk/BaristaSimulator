@@ -1,15 +1,21 @@
-using UnityEngine.InputSystem;
-using SibGameJam2026.Input;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using Zenject;
 
 namespace SibGameJam2026.Services {
-	public class UnityInputService : IInputService {
-		private readonly GameInput _gameInput;
+	public class UnityInputService : IInputService, IInitializable {
+		private const string UiMapName = "UI";
 
-		public UnityInputService() {
-			_gameInput = new GameInput();
-			_gameInput.Enable();
+		private readonly InputActionAsset _asset;
+
+		[Inject]
+		public UnityInputService(InputActionAsset gameInputAsset) {
+			_asset = gameInputAsset;
 		}
+
+		public void Initialize() => SwitchToUIMap();
+
+		public void SwitchToUIMap() => SwitchActionMap(UiMapName);
 
 		public bool IsButtonPressed(string buttonName) {
 			var action = FindAction(buttonName);
@@ -30,21 +36,30 @@ namespace SibGameJam2026.Services {
 			if (string.IsNullOrWhiteSpace(actionMapName))
 				return;
 
-			var actionMap = _gameInput.asset.FindActionMap(actionMapName, false);
-			if (actionMap == null)
+			var uiMap = _asset.FindActionMap(UiMapName, false);
+			var targetMap = _asset.FindActionMap(actionMapName, false);
+			if (targetMap == null)
 				return;
 
-			foreach (var map in _gameInput.asset.actionMaps)
+			// Never disable the UI map here: InputSystemUIInputModule keeps references to UI actions.
+			// Disabling the whole UI map breaks pointer routing until the module is reset.
+			foreach (var map in _asset.actionMaps) {
+				if (map == uiMap)
+					continue;
 				map.Disable();
+			}
 
-			actionMap.Enable();
+			if (targetMap != uiMap)
+				targetMap.Enable();
+
+			uiMap?.Enable();
 		}
 
 		private InputAction FindAction(string actionName) {
 			if (string.IsNullOrWhiteSpace(actionName))
 				return null;
 
-			return _gameInput.asset.FindAction(actionName, false);
+			return _asset.FindAction(actionName, false);
 		}
 	}
 }

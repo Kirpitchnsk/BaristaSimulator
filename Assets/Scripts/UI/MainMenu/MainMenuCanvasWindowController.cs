@@ -6,26 +6,27 @@ using UnityEngine.UI;
 using UnityEditor;
 #endif
 
-namespace Arenar.Services.UI
-{
-	public class MainMenuCanvasWindowController : CanvasWindowController
-	{
+namespace Arenar.Services.UI {
+	public class MainMenuCanvasWindowController : CanvasWindowController {
 		private MainMenuCanvasWindow _mainMenuCanvasWindow;
 		private MainMenuButtonsCanvasWindowLayer _buttons;
 		private IGameService _gameService;
 		
-		public MainMenuCanvasWindowController(IInputService inputService, IGameService gameService) : base(inputService) {
+		public MainMenuCanvasWindowController(IInputService inputService, IGameService gameService
+			) : base(inputService) {
 			_gameService = gameService;
 		}
 
-		public override void Initialize(ICanvasService canvasService)
-		{
+		public override void Initialize(ICanvasService canvasService) {
 			base.Initialize(canvasService);
 			
 			_mainMenuCanvasWindow = canvasService
 				.GetWindow<MainMenuCanvasWindow>();
 
 			_buttons = _mainMenuCanvasWindow.GetWindowLayer<MainMenuButtonsCanvasWindowLayer>();
+
+			_mainMenuCanvasWindow.OnShowEnd.AddListener(OnWindowShowEnd_SelectElements);
+			_mainMenuCanvasWindow.OnHideBegin.AddListener(OnWindowHideBegin_DeselectElements);
 
 			_buttons.StartButton.onClick.AddListener(StartButton_OnClick);
 			_buttons.AuthorsButton.onClick.AddListener(Authors_OnClick);
@@ -34,8 +35,9 @@ namespace Arenar.Services.UI
 
 		private void StartButton_OnClick()
 		{
-			_gameService.StartGame();
+			_gameService.StartGame("Town");
 			canvasService.ShowWindow<GameplayCanvasWindow>();
+			canvasService.HideWindow<MainMenuCanvasWindow>();
 		}
 
 		private void Authors_OnClick()

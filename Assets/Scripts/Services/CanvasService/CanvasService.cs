@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.UI;
 using UnityEngine.UI;
 using Zenject;
 using Object = UnityEngine.Object;
@@ -42,16 +43,18 @@ namespace Arenar.Services.UI
 
 
 		[Inject]
-		public void Construct(ITransitionController transitionController) =>
+		public void Construct(ITransitionController transitionController) {
 			TransitionController = transitionController;
+		}
 
 		public void Initialize()
         {
             allWindowsPool = new Dictionary<Type, CanvasWindow>();
             windowsStack = new Stack<CanvasWindow>();
 
-            RootCanvas = CreateRootCanvas();
             CheckEventSystem();
+
+            RootCanvas = CreateRootCanvas();
             GenerateCanvasWindows(RootCanvas);
             GenerateElementCanvasControllers();
             SetupDefaultWindow();
@@ -128,7 +131,7 @@ namespace Arenar.Services.UI
 			if (rootObject == null)
 				rootObject = new GameObject(canvasWindowsSettings.SceneRootName);
 
-			Canvas canvas = new GameObject($"{nameof(Canvas)}", typeof(Canvas), typeof(CanvasScaler)).GetComponent<Canvas>();
+			Canvas canvas = new GameObject($"{nameof(Canvas)}", typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster)).GetComponent<Canvas>();
 			canvas.transform.SetParent(rootObject.transform);
 			canvas.renderMode = canvasWindowsSettings.RenderMode;
 			canvas.planeDistance = canvasWindowsSettings.PlaneDistance;
@@ -144,9 +147,9 @@ namespace Arenar.Services.UI
 
 		private void CheckEventSystem()
 		{
-			if (Object.FindObjectOfType<EventSystem>() == null)
+			if (Object.FindFirstObjectByType<EventSystem>() == null)
 			{
-				var eventSystem = new GameObject($"{nameof(EventSystem)}", typeof(EventSystem), typeof(StandaloneInputModule));
+				new GameObject($"{nameof(EventSystem)}", typeof(EventSystem), typeof(InputSystemUIInputModule));
 			}
 		}
 

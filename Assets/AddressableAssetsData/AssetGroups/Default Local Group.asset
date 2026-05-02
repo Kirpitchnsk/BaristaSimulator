@@ -15,8 +15,18 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: 7f7fba132cb08814b923dff250229858
   m_SerializeEntries:
+  - m_GUID: 143e0429091350748a296eafa1616e19
+    m_Address: Assets/Content/Prefabs/Characters/Client1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2140dedce2406c347a0c16bc837fb41b
     m_Address: Assets/Content/Prefabs/ItemVisuals/Sugar_ItemVisual.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5abd3cfed64b28b439d8d9f74415f9e4
+    m_Address: Assets/Content/Prefabs/ItemVisuals/Honey_ItemVisual.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
