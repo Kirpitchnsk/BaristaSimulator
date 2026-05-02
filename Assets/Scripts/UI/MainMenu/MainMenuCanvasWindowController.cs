@@ -27,6 +27,9 @@ namespace Arenar.Services.UI
 
 			_buttons = _mainMenuCanvasWindow.GetWindowLayer<MainMenuButtonsCanvasWindowLayer>();
 
+			_mainMenuCanvasWindow.OnShowEnd.AddListener(OnWindowShowEnd_SelectElements);
+			_mainMenuCanvasWindow.OnHideBegin.AddListener(OnWindowHideBegin_DeselectElements);
+
 			_buttons.StartButton.onClick.AddListener(StartButton_OnClick);
 			_buttons.AuthorsButton.onClick.AddListener(Authors_OnClick);
 			_buttons.ExitButton.onClick.AddListener(Exit_OnClick);
@@ -36,6 +39,7 @@ namespace Arenar.Services.UI
 		{
 			_gameService.StartGame();
 			canvasService.ShowWindow<GameplayCanvasWindow>();
+			canvasService.HideWindow<MainMenuCanvasWindow>();
 		}
 
 		private void Authors_OnClick()

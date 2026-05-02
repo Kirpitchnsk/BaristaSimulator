@@ -20,6 +20,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5abd3cfed64b28b439d8d9f74415f9e4
+    m_Address: Assets/Content/Prefabs/ItemVisuals/Honey_ItemVisual.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 66bc0bd1bcab798429ec6c702c2a0940
     m_Address: Assets/Content/Prefabs/ItemVisuals/Ice_ItemVisual.prefab
     m_ReadOnly: 0

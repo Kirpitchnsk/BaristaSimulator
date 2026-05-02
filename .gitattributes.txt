@@ -1,0 +1,27 @@
+# Настройки для текстовых файлов (чтобы не было проблем с Windows/Mac)
+*.cs diff=csharp text
+*.asmdef text
+*.unity text
+*.prefab text
+*.asset text
+*.mat text
+*.meta text
+*.controller text
+*.overrideController text
+*.anim text
+*.mask text
+*.physicsMaterial2D text
+*.physicsMaterial text
+*.playable text
+*.storyboard text
+
+# Бинарные файлы (просто помечаем их, чтобы Git не пытался их "исправлять")
+*.jpg binary
+*.png binary
+*.psd binary
+*.fbx binary
+*.obj binary
+*.mp3 binary
+*.wav binary
+*.tga binary
+*.cubemap binary

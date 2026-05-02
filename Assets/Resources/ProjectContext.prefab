@@ -259,6 +259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SibGameJam2026.MergeService.TestSystemsInstaller
   _repiceTestInputItemIds: []
+  _enableUiInputMonitor: 1
 --- !u!1 &4943716298248433159
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,6 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6abaca51f886b4d917553c89e0275c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SibGameJam2026.Services.InputServiceInstaller
+  _gameInputAsset: {fileID: -944628639613478452, guid: c71a267698ffe9e4d9b9137fb9f6f1b1, type: 3}
 --- !u!1 &6134646203213048166
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,14 +8,17 @@ namespace SibGameJam2026.Services {
 		private IInventoryService _inventoryService;
 		private readonly ACharacter.Factory _characterFactory;
 		private readonly ICameraService _cameraService;
+		private readonly IInputService _inputService;
 		
 		public GameService(
 			IInventoryService inventoryService,
 			ACharacter.Factory characterFactory,
-			ICameraService cameraService) {
+			ICameraService cameraService,
+			IInputService inputService) {
 			_inventoryService = inventoryService;
 			_characterFactory = characterFactory;
 			_cameraService = cameraService;
+			_inputService = inputService;
 			Debug.Log("GameService is Initialized" + inventoryService);
 		}
 		
@@ -33,6 +36,7 @@ namespace SibGameJam2026.Services {
 			_cameraService.CreateCamera(ECameraType.FirstPerson, cameraParent);
 
 			_inventoryService.Add(1);
+			_inputService.SwitchActionMap("PlayerInputMap");
 			IsGameActive = true;
 		}
 
