@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using SibGameJam2026.Services;
 using SibGameJam2026.Characters;
@@ -21,12 +22,19 @@ namespace SibGameJam2026.Cameras {
 		public Transform YawTarget { get; private set; }
 
 		public void Initialize(Transform parent, IInputService inputService) {
-			Parent = parent;
-			var character = parent.GetComponentInParent<ACharacter>();
-			YawTarget = character != null ? character.transform : parent;
 			_inputService = inputService;
-			_yaw = YawTarget != null ? YawTarget.eulerAngles.y : parent.eulerAngles.y;
+			SetFollowTarget(parent);
 			_pitch = transform.eulerAngles.x;
+		}
+
+		public void SetFollowTarget(Transform followPoint) {
+			if (followPoint == null)
+				throw new ArgumentNullException(nameof(followPoint));
+
+			Parent = followPoint;
+			var character = followPoint.GetComponentInParent<ACharacter>();
+			YawTarget = character != null ? character.transform : followPoint;
+			_yaw = YawTarget != null ? YawTarget.eulerAngles.y : followPoint.eulerAngles.y;
 		}
 
 		private void LateUpdate() {

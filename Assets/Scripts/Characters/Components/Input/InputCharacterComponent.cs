@@ -30,14 +30,14 @@ namespace SibGameJam2026.Characters.Components {
 			}
 
 			var moveInput = _inputService.GetVector(MovementAction);
-			var hasActiveCamera = _cameraService.TryGetActiveCamera(out var activeCamera);
+			var hasActiveCamera = _cameraService.TryGetActiveCamera(out var cameraController);
 
 			Vector3 forward;
 			Vector3 right;
 
 			if (hasActiveCamera) {
-				forward = activeCamera.transform.forward;
-				right = activeCamera.transform.right;
+				forward = cameraController.transform.forward;
+				right = cameraController.transform.right;
 			} else {
 				forward = _character.transform.forward;
 				right = _character.transform.right;

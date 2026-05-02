@@ -23,7 +23,7 @@ namespace SibGameJam2026.Testing {
 		public void Initialize() {
 			var ui = _asset.FindActionMap(UiMapName, false);
 			if (ui == null) {
-				Debug.LogWarning($"[{nameof(UiInputMonitor)}] Action map '{UiMapName}' not found on {_asset.name}.");
+				D.Warning($"[{nameof(UiInputMonitor)}] Action map '{UiMapName}' not found on {_asset.name}.");
 				return;
 			}
 
@@ -55,7 +55,7 @@ namespace SibGameJam2026.Testing {
 			if (action.name == "Point")
 				return;
 
-			Debug.Log($"[{nameof(UiInputMonitor)}] {action.actionMap?.name}/{action.name} phase={ctx.phase} value={ctx.ReadValueAsObject()}");
+			D.Log($"[{nameof(UiInputMonitor)}] {action.actionMap?.name}/{action.name} phase={ctx.phase} value={ctx.ReadValueAsObject()}");
 #endif
 		}
 	}
