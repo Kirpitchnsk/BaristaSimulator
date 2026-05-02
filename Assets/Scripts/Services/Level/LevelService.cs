@@ -11,7 +11,7 @@ using UnityEngine;
 using Zenject;
 
 namespace SibGameJam2026.Services {
-	public class LevelService : ILevelService {
+	public class LevelService : ILevelService, ITickable {
 		private const string ClientsExhaustedLog = "[LevelService] Персонажи закончились";
 
 		private readonly ACharacter.Factory _characterFactory;
@@ -20,16 +20,19 @@ namespace SibGameJam2026.Services {
 		private readonly ItemsDatabase _itemsDatabase;
 		private readonly IMergeSystem _mergeSystem;
 		private readonly CarManager _carManager;
-		/// <summary>Отложенный резолв: контроллер появляется в контейнере только после <see cref="CanvasService.Initialize"/>.</summary>
+
 		private readonly LazyInject<GameplayCanvasWindowController> _gameplayCanvasController;
 
 		private readonly Dictionary<int, ItemId> _clientExpectedDishByInstanceId = new();
 
 		private GameSettingsData _activeLevel;
+		private INpcControlStateCharacterComponent _activeClientNpcState;
 		private int _nextClientIndex;
 		private int _currentActiveClientIndex = -1;
 		private int _cookSuccessCount;
 		private int _cookFailureCount;
+		private float _activeCookDeadline;
+		private bool _isCookTimerRunning;
 
 		public int CookFailureCount => _cookFailureCount;
 		public int CookSuccessCount => _cookSuccessCount;
@@ -58,8 +61,10 @@ namespace SibGameJam2026.Services {
 
 			_nextClientIndex = 0;
 			_currentActiveClientIndex = -1;
+			_activeClientNpcState = null;
 			_cookSuccessCount = 0;
 			_cookFailureCount = 0;
+			_isCookTimerRunning = false;
 
 			_clientExpectedDishByInstanceId.Clear();
 
@@ -89,6 +94,18 @@ namespace SibGameJam2026.Services {
 			return _clientExpectedDishByInstanceId.TryGetValue(clientNpc.gameObject.GetInstanceID(), out dishId);
 		}
 
+		public void Tick() {
+			if (!_isCookTimerRunning)
+				return;
+			if (Time.time < _activeCookDeadline)
+				return;
+
+			_isCookTimerRunning = false;
+			SetCookFailed();
+			if (_activeClientNpcState != null && _activeClientNpcState.State == EClientState.WaitCooking)
+				_activeClientNpcState.SetState(EClientState.NonTransformed);
+		}
+
 		public void SetCookFailed() {
 			if (_currentActiveClientIndex < 0)
 				return;
@@ -99,6 +116,28 @@ namespace SibGameJam2026.Services {
 
 			_cookFailureCount++;
 			_gameplayCanvasController.Value?.SetClientCookFailed(_currentActiveClientIndex);
+		}
+
+		public void StartActiveClientCookingTimer() {
+			if (_activeLevel == null || _currentActiveClientIndex < 0) {
+				_isCookTimerRunning = false;
+				return;
+			}
+
+			var clients = _activeLevel.ClientData;
+			if (clients == null || _currentActiveClientIndex >= clients.Count) {
+				_isCookTimerRunning = false;
+				return;
+			}
+
+			var timeoutSeconds = clients[_currentActiveClientIndex].CookTimeoutSeconds;
+			if (timeoutSeconds <= 0f) {
+				_isCookTimerRunning = false;
+				return;
+			}
+
+			_activeCookDeadline = Time.time + timeoutSeconds;
+			_isCookTimerRunning = true;
 		}
 
 		public void PresentClientOrderUi(ACharacter clientNpc) {
@@ -151,15 +190,21 @@ namespace SibGameJam2026.Services {
 			_nextClientIndex++;
 
 			if (character.TryGetComponent<INpcControlStateCharacterComponent>(out var npcState)) {
+				_activeClientNpcState = npcState;
 				void Handler(EClientState state) {
+					if (state != EClientState.WaitCooking)
+						_isCookTimerRunning = false;
 					if (state != EClientState.Finished)
 						return;
 					npcState.StateChanged -= Handler;
+					if (_activeClientNpcState == npcState)
+						_activeClientNpcState = null;
 					TrySpawnNextClientNpc();
 				}
 
 				npcState.StateChanged += Handler;
 			} else {
+				_activeClientNpcState = null;
 				Debug.LogWarning(
 					$"[{nameof(LevelService)}] У {character.name} нет {nameof(INpcControlStateCharacterComponent)} — очередь клиентов не продолжится, пока не будет FSM.");
 			}
