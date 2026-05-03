@@ -1713,7 +1713,7 @@ Transform:
   m_Children:
   - {fileID: 3503406077234600093}
   m_Father: {fileID: 237019242296462490}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.000099957935, y: -0.0241, z: -0.00009999998}
 --- !u!1 &1534380933036144762
 GameObject:
   m_ObjectHideFlags: 0
@@ -1940,7 +1940,7 @@ Transform:
   m_Children:
   - {fileID: 5817082733842248888}
   m_Father: {fileID: 3221870561409104335}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.00009999999, y: -0.0076, z: 0}
 --- !u!1 &1665695483900458072
 GameObject:
   m_ObjectHideFlags: 0
@@ -2973,7 +2973,7 @@ Transform:
   m_Children:
   - {fileID: 5784495513666181696}
   m_Father: {fileID: 670237035000118278}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.0001, y: 0.62139994, z: 5.0888865e-14}
 --- !u!1 &2875064704835238503
 GameObject:
   m_ObjectHideFlags: 0
@@ -3005,7 +3005,7 @@ Transform:
   m_Children:
   - {fileID: 1869627912911802891}
   m_Father: {fileID: 7475515150434931948}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.0006988405, y: 0.009100089, z: -0.0073}
 --- !u!1 &2903657691726636624
 GameObject:
   m_ObjectHideFlags: 0
@@ -4784,7 +4784,7 @@ Transform:
   m_Children:
   - {fileID: 8707624836492331400}
   m_Father: {fileID: 8295498895654617873}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.00009999999, y: 0.0076, z: 0}
 --- !u!1 &5060301937313796453
 GameObject:
   m_ObjectHideFlags: 0
@@ -4848,7 +4848,7 @@ Transform:
   m_Children:
   - {fileID: 3829160190673446152}
   m_Father: {fileID: 5720410552838584285}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.000099957935, y: 0.0241, z: 0.00009999998}
 --- !u!1 &5148341315428157001
 GameObject:
   m_ObjectHideFlags: 0
@@ -6370,7 +6370,7 @@ Transform:
   m_Children:
   - {fileID: 1515787694334413370}
   m_Father: {fileID: 7095442794093904446}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.0006988405, y: -0.009100089, z: 0.0073}
 --- !u!1 &7540997790079831867
 GameObject:
   m_ObjectHideFlags: 0
@@ -6563,7 +6563,7 @@ Transform:
   m_Children:
   - {fileID: 213176556852972681}
   m_Father: {fileID: 6398297797507895816}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.0001, y: -0.62139994, z: -5.0888865e-14}
 --- !u!1 &7690088890022384430
 GameObject:
   m_ObjectHideFlags: 0
@@ -7137,14 +7137,20 @@ Animator:
   m_GameObject: {fileID: 8531195259253267600}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: e3f26e14f277c6d4c97ab6487552b69b, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8bab417946c44f24680dc69eadcf772a, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'CC_BaseRing2.L'\n\tTransform 'CC_BaseThigh.L'\n\tTransform
+    'CC_BaseClavicle.R'\n\tTransform 'CC_Base_NeckTwist01'\n\tTransform 'CC_BasePinky1.L'\n\tTransform
+    'CC_BaseIndex1.L'\n\tTransform 'CC_BasePinky2.L'\n\tTransform 'CC_BaseMid1.L'\n\tTransform
+    'CC_BaseForearm.R'\n\tTransform 'CC_BaseIndex2.R'\n\tand more ...\n\tFrom animation
+    clip 'Walking'\n\tFrom animation clip 'Idle'"
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
