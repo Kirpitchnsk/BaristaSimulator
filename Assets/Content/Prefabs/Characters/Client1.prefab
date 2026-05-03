@@ -6957,6 +6957,7 @@ GameObject:
   - component: {fileID: 275355383907332871}
   - component: {fileID: 5665418265216934901}
   - component: {fileID: 7991198078843730883}
+  - component: {fileID: 7105463768971862889}
   m_Layer: 6
   m_Name: Client1
   m_TagString: Untagged
@@ -6995,7 +6996,7 @@ MonoBehaviour:
   <Data>k__BackingField:
     <Rigidbody>k__BackingField: {fileID: 0}
     <CharacterController>k__BackingField: {fileID: 5665418265216934901}
-    <Animator>k__BackingField: {fileID: 0}
+    <Animator>k__BackingField: {fileID: 3347822617317704077}
     <CameraPoint>k__BackingField: {fileID: 0}
     <ItemPosition>k__BackingField: {fileID: 2315518870893006924}
 --- !u!143 &5665418265216934901
@@ -7046,6 +7047,19 @@ CapsuleCollider:
   m_Height: 1.6
   m_Direction: 1
   m_Center: {x: 0, y: 0.8, z: 0}
+--- !u!114 &7105463768971862889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8434567228130252738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23c9f26b8dd0ba244896fc539dc02f1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PokupatellAnimateControl
+  animator: {fileID: 3347822617317704077}
 --- !u!1 &8503698888996864881
 GameObject:
   m_ObjectHideFlags: 0
@@ -7144,13 +7158,7 @@ Animator:
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'CC_BaseRing2.L'\n\tTransform 'CC_BaseThigh.L'\n\tTransform
-    'CC_BaseClavicle.R'\n\tTransform 'CC_Base_NeckTwist01'\n\tTransform 'CC_BasePinky1.L'\n\tTransform
-    'CC_BaseIndex1.L'\n\tTransform 'CC_BasePinky2.L'\n\tTransform 'CC_BaseMid1.L'\n\tTransform
-    'CC_BaseForearm.R'\n\tTransform 'CC_BaseIndex2.R'\n\tand more ...\n\tFrom animation
-    clip 'Walking'\n\tFrom animation clip 'Idle'"
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
