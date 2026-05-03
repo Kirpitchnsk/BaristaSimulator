@@ -9,11 +9,7 @@ namespace Arenar.AudioSystem
     public class SoundsLibrary : ScriptableObjectInstaller
     {
         [SerializeField] private SerializableDictionary<ESoundType, AudioClip[]> _sounds = default;
-        [SerializeField] private AudioClip[] attackSounds = default;
 
-
-        public AudioClip GetRandomAttackSound() =>
-            attackSounds[Random.Range(0, attackSounds.Length)];
         
         public AudioClip GetRandomGroundStepSound(ESoundType type)
         {

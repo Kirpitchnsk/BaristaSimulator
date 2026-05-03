@@ -28,4 +28,22 @@ MonoBehaviour:
       Value:
       - {fileID: 8300000, guid: 67e27bb3c3c84064f952e47cb1f7c7ef, type: 3}
       - {fileID: 8300000, guid: 6e1305e1acc1e704d8b38d8ff4764c9e, type: 3}
+    - Key: 9
+      Value:
+      - {fileID: 8300000, guid: aec78fc587cb2fe4781f4cbafeb54fde, type: 3}
+      - {fileID: 8300000, guid: 6df81fc5cc7833141a8281e153c0cf0f, type: 3}
+    - Key: 10
+      Value:
+      - {fileID: 8300000, guid: b536db6c2ddbaac44a01a7ad8de468ef, type: 3}
+      - {fileID: 8300000, guid: 663a8a46db5f9074daca718b221482ee, type: 3}
+      - {fileID: 8300000, guid: a8b16eaf89d225a4fbc9bad246d2ea59, type: 3}
+    - Key: 7
+      Value:
+      - {fileID: 8300000, guid: abf2d78de1a84624b878257f947fa83a, type: 3}
+      - {fileID: 8300000, guid: 5ce1ab3356681164f89f9c582c7bb95a, type: 3}
+    - Key: 3
+      Value:
+      - {fileID: 8300000, guid: e3b77c50d69eeab4f8554d18b2e3ce4f, type: 3}
+      - {fileID: 8300000, guid: db17452c9381e494299f4611fe134386, type: 3}
+      - {fileID: 8300000, guid: 20756f318d5cbe8429db9fd27b61f8b7, type: 3}
   attackSounds: []

@@ -9,10 +9,8 @@ namespace SibGameJam2026 {
 		[field: SerializeField] public Collider InteractionCollider { get; private set; }
 		[field: SerializeField] public Item ItemData { get; private set; }
 		public ItemId ItemId => ItemData.ItemId;
-
-		[SerializeField] private ESoundType _interactionSound = ESoundType.None;
-
-		public ESoundType InteractionSound => _interactionSound;
+		
+		public ESoundType InteractionSound => ItemData.SoundType;
 
 		public string InteractItemName => ItemData.Name;
 

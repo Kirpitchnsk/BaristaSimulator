@@ -104,6 +104,8 @@ namespace SibGameJam2026 {
 
 			if (!_mergeSystem.TryGetMergedProductId(inputIds, out var outputItemId)) {
 				D.Log($"{nameof(ItemMerger)} cannot merge current buffer. Recipe was not found.");
+				PoolBufferedInputVisuals();
+				_bufferedItems.Clear();
 				return false;
 			}
 
