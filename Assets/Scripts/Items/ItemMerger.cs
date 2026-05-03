@@ -9,6 +9,8 @@ using Zenject;
 
 namespace SibGameJam2026 {
 	public abstract class ItemMerger : AInteractItemVisual {
+		[SerializeField] private string _name = "Кофе машинка";
+		
 		[SerializeField] private List<EItemType> _supportedInputTypes;
 		[SerializeField] private int _maxBufferedItems = 3;
 		[SerializeField] private float _processingTimeSeconds = 5f;
@@ -34,6 +36,9 @@ namespace SibGameJam2026 {
 		private bool _isProcessing;
 		private float _remainingTime;
 		private ItemProcessingSquashState _squashState;
+		
+		public override string InteractItemName => _name;
+		public int ItemsCount => _bufferedItems.Count;
 
 		[Inject]
 		private void Construct(IMergeSystem mergeSystem, ItemsFactory itemsFactory, ItemsDatabase itemsDatabase) {
@@ -99,6 +104,8 @@ namespace SibGameJam2026 {
 
 			if (!_mergeSystem.TryGetMergedProductId(inputIds, out var outputItemId)) {
 				D.Log($"{nameof(ItemMerger)} cannot merge current buffer. Recipe was not found.");
+				PoolBufferedInputVisuals();
+				_bufferedItems.Clear();
 				return false;
 			}
 
@@ -198,10 +205,10 @@ namespace SibGameJam2026 {
 		}
 
 		private void PlayProcessingSquash() {
-			var visual = _processingVisualTransform != null ? _processingVisualTransform : transform;
-			ItemProcessingSquashAnimation.Start(
+			ItemProcessingSquashAnimation.StartOnTransform(
 				ref _squashState,
-				visual,
+				_processingVisualTransform,
+				transform,
 				_squashHalfCycleSeconds,
 				_squashXZStretch,
 				_squashYMul);

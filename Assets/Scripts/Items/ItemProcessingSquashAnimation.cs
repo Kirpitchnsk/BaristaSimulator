@@ -15,6 +15,20 @@ namespace SibGameJam2026 {
 	}
 
 	public static class ItemProcessingSquashAnimation {
+		/// <summary>
+		/// То же, что <see cref="Start"/>, но корень — <paramref name="processingVisualTransform"/>, иначе <paramref name="fallbackTransform"/>.
+		/// </summary>
+		public static void StartOnTransform(
+			ref ItemProcessingSquashState state,
+			Transform processingVisualTransform,
+			Transform fallbackTransform,
+			float halfCycleDuration,
+			float xzStretchMul,
+			float ySquashMul) {
+			var root = processingVisualTransform != null ? processingVisualTransform : fallbackTransform;
+			Start(ref state, root, halfCycleDuration, xzStretchMul, ySquashMul);
+		}
+
 		public static void Start(
 			ref ItemProcessingSquashState state,
 			Transform root,

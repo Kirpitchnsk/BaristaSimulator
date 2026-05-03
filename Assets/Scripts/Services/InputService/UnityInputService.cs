@@ -32,6 +32,20 @@ namespace SibGameJam2026.Services {
 			return action != null ? action.ReadValue<Vector2>() : Vector2.zero;
 		}
 
+		public Vector2 GetCameraLook(string actionName, float mouseSensitivity, float stickSensitivity, float deltaTime) {
+			var action = FindAction(actionName);
+			if (action == null)
+				return Vector2.zero;
+
+			var value = action.ReadValue<Vector2>();
+			var control = action.activeControl;
+
+			if (control != null && control.device is Mouse)
+				return value * mouseSensitivity;
+
+			return value * stickSensitivity * deltaTime;
+		}
+
 		public void SwitchActionMap(string actionMapName) {
 			if (string.IsNullOrWhiteSpace(actionMapName))
 				return;

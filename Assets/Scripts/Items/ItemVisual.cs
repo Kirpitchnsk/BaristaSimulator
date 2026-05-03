@@ -1,13 +1,18 @@
+using Arenar.AudioSystem;
 using SibGameJam2026.Items;
 using SibGameJam2026.MergeService;
 using SibGameJam2026.Characters.Components;
 using UnityEngine;
 
 namespace SibGameJam2026 {
-	public class ItemVisual : MonoBehaviour, IInteractable {
+	public class ItemVisual : MonoBehaviour, IInteractable, ISound {
 		[field: SerializeField] public Collider InteractionCollider { get; private set; }
 		[field: SerializeField] public Item ItemData { get; private set; }
 		public ItemId ItemId => ItemData.ItemId;
+		
+		public ESoundType InteractionSound => ItemData.SoundType;
+
+		public string InteractItemName => ItemData.Name;
 
 		private void Awake() {
 			if (InteractionCollider == null)

@@ -1,5 +1,7 @@
 using UnityEngine;
+using SibGameJam2026;
 using SibGameJam2026.Cameras;
+using SibGameJam2026.Services;
 
 namespace SibGameJam2026.Characters.Components {
 	public class InteractableCharacterComponent : IInteractableComponent {
@@ -8,11 +10,18 @@ namespace SibGameJam2026.Characters.Components {
 
 		private readonly ACharacter _character;
 		private readonly ICameraService _cameraService;
+		private readonly IInteractionSoundService _interactionSoundService;
+
 		public ACharacter Character => _character;
 
-		public InteractableCharacterComponent(ACharacter character, ICameraService cameraService) {
+		public InteractableCharacterComponent(
+			ACharacter character,
+			ICameraService cameraService,
+			IInteractionSoundService interactionSoundService
+		) {
 			_character = character;
 			_cameraService = cameraService;
+			_interactionSoundService = interactionSoundService;
 		}
 
 		public void Interact() {
@@ -38,6 +47,11 @@ namespace SibGameJam2026.Characters.Components {
 			var usedItem = _character.TryGetComponent<IInventoryComponent>(out var inventoryComponent)
 				? inventoryComponent.CurrentItem
 				: default;
+
+			if (interactable is ISound sound && sound.InteractionSound != ESoundType.None) {
+				var soundHost = (interactable as Component)?.gameObject ?? _character.gameObject;
+				_interactionSoundService.Play(soundHost, sound.InteractionSound);
+			}
 
 			interactable.OnInteract(new InteractContext(_character, usedItem));
 		}

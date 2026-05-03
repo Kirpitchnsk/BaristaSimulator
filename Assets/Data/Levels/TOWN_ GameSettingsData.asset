@@ -18,8 +18,19 @@ MonoBehaviour:
     <ClientIcon>k__BackingField: {fileID: 21300000, guid: d7d7249fd1bb59e46b8dc58978b58726, type: 3}
     <ItemId>k__BackingField:
       _value: DefaultCoffeeCup
+    <CookTimeoutSeconds>k__BackingField: 40
+  - <ECharacterType>k__BackingField: 2
+    <ClientIcon>k__BackingField: {fileID: 21300000, guid: 934b30f949b6577468be0d9421662f0a, type: 3}
+    <ItemId>k__BackingField:
+      _value: DefaultCoffeeCup
+    <CookTimeoutSeconds>k__BackingField: 40
+  - <ECharacterType>k__BackingField: 3
+    <ClientIcon>k__BackingField: {fileID: 21300000, guid: fd4b5f354c1a36c46bbf6168e2662a93, type: 3}
+    <ItemId>k__BackingField:
+      _value: DefaultCoffeeCup
+    <CookTimeoutSeconds>k__BackingField: 40
   _location:
-    m_AssetGUID: 
+    m_AssetGUID: 86b804d8b0b69d94bbdd2f539a6001df
     m_SubObjectName: 
     m_SubObjectType: 
     m_SubObjectGUID: 

@@ -32,5 +32,16 @@ namespace Arenar.Services.UI {
 
             container.SetClientInteractResult(false);
         }
+
+        public void SetSlotCookSuccess(int slotIndex) {
+            if (ClientContainers == null || slotIndex < 0 || slotIndex >= ClientContainers.Length)
+                return;
+
+            var container = ClientContainers[slotIndex];
+            if (container == null || !container.gameObject.activeSelf)
+                return;
+
+            container.SetClientInteractResult(true);
+        }
     }
 }

@@ -7,12 +7,15 @@ using Zenject;
 
 namespace SibGameJam2026 {
 	public class ItemTransformer : AInteractItemVisual {
+		[SerializeField] private string _name;
+		
+		[Header("Параметры")]
 		[SerializeField] private List<EItemType> _supportedInputTypes;
 		[SerializeField] private float _processingTimeSeconds = 5f;
 		[SerializeField] private Transform _inputItemPosition;
 		[SerializeField] private Transform _outputItemPosition;
 
-		[Header("Processing visual (Teapot, etc.)")]
+		[Header("Анимация)")]
 		[SerializeField] private Transform _processingVisualTransform;
 		[SerializeField] private float _squashHalfCycleSeconds = 0.35f;
 		[SerializeField] private float _squashXZStretch = 1.06f;
@@ -26,6 +29,8 @@ namespace SibGameJam2026 {
 		private ItemsFactory _itemsFactory;
 		private ItemsDatabase _itemsDatabase;
 		private ItemProcessingSquashState _squashState;
+
+		public override string InteractItemName => _name;
 
 		[Inject]
 		private void Construct(IMergeSystem mergeSystem, ItemsFactory itemsFactory, ItemsDatabase itemsDatabase) {
@@ -117,10 +122,10 @@ namespace SibGameJam2026 {
 		}
 
 		private void PlayProcessingSquash() {
-			var visual = _processingVisualTransform != null ? _processingVisualTransform : transform;
-			ItemProcessingSquashAnimation.Start(
+			ItemProcessingSquashAnimation.StartOnTransform(
 				ref _squashState,
-				visual,
+				_processingVisualTransform,
+				transform,
 				_squashHalfCycleSeconds,
 				_squashXZStretch,
 				_squashYMul);

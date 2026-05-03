@@ -40,6 +40,7 @@ namespace SibGameJam2026.Services {
 		}
 
 		public void CompleteGame() {
+			_levelService.EndLevel();
 			IsGameActive = false;
 		}
 	}

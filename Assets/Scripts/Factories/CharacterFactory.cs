@@ -16,6 +16,7 @@ namespace SibGameJam2026.Characters {
 		private readonly LazyInject<ILevelService> _levelService;
 		private readonly CarManager _carManager;
 		private readonly ItemsFactory _itemsFactory;
+		private readonly IInteractionSoundService _interactionSoundService;
 
 		public CharacterFactory(
 			CharactersDatabase charactersDatabase,
@@ -23,7 +24,8 @@ namespace SibGameJam2026.Characters {
 			ICameraService cameraService,
 			LazyInject<ILevelService> levelService,
 			CarManager carManager,
-			ItemsFactory itemsFactory
+			ItemsFactory itemsFactory,
+			IInteractionSoundService interactionSoundService
 		) {
 			_charactersDatabase = charactersDatabase;
 			_inputService = inputService;
@@ -31,6 +33,7 @@ namespace SibGameJam2026.Characters {
 			_levelService = levelService;
 			_carManager = carManager;
 			_itemsFactory = itemsFactory;
+			_interactionSoundService = interactionSoundService;
 		}
 
 		public ACharacter Create(ECharacterType eCharacterType, Vector3 spawnPosition) {
@@ -57,8 +60,7 @@ namespace SibGameJam2026.Characters {
 		) {
 			return entry.ECharacterType switch {
 				ECharacterType.Player => CreatePlayerComponents(entry, character),
-				ECharacterType.Client => CreateClientComponents(entry, character),
-				_ => throw new ArgumentOutOfRangeException(nameof(entry.ECharacterType), entry.ECharacterType, "Unknown character type")
+				_ => CreateClientComponents(entry, character),
 			};
 		}
 
@@ -72,7 +74,10 @@ namespace SibGameJam2026.Characters {
 					typeof(IInputCharacterComponent),
 					new InputCharacterComponent(character, _inputService, _cameraService)
 				},
-				{ typeof(IInteractableComponent), new InteractableCharacterComponent(character, _cameraService) },
+				{
+					typeof(IInteractableComponent),
+					new InteractableCharacterComponent(character, _cameraService, _interactionSoundService)
+				},
 				{ typeof(IInventoryComponent), new SimpleCharacterInventoryComponent(character) }
 			};
 		}
@@ -87,7 +92,7 @@ namespace SibGameJam2026.Characters {
 				{ typeof(IMovementCharacterComponent), new NpcMovementCharacterComponent(character, entry) },
 				{
 					typeof(INpcControlStateCharacterComponent),
-					new NpcControlStateCharacterComponent(character, authoring, _levelService)
+					new NpcControlStateCharacterComponent(character, authoring)
 				},
 				{
 					typeof(IInteractableCharacterComponent),
