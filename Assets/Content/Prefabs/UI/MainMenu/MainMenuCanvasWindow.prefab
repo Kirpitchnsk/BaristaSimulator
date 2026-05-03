@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5045942798673676657}
   - component: {fileID: 4019514900458152366}
   - component: {fileID: 222324376531333829}
+  - component: {fileID: 5421915401259987590}
   m_Layer: 5
   m_Name: Autor
   m_TagString: Untagged
@@ -120,6 +121,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5421915401259987590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2290803637845450434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f488028a7eb05a04bb9f2fff3415405a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationFx
+  scaleAmount: 0.15
+  speed: 8
+  rotationAmount: 8
 --- !u!1 &5102005953697677764
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,6 +148,7 @@ GameObject:
   - component: {fileID: 8068180055490939160}
   - component: {fileID: 3993744790661583738}
   - component: {fileID: 7074079487730126212}
+  - component: {fileID: 6857976194389036899}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -240,6 +257,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6857976194389036899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102005953697677764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f488028a7eb05a04bb9f2fff3415405a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationFx
+  scaleAmount: 0.15
+  speed: 8
+  rotationAmount: 8
 --- !u!1 &6066858116991781567
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,6 +359,7 @@ GameObject:
   - component: {fileID: 2115087549791562141}
   - component: {fileID: 7891425716092725615}
   - component: {fileID: 2082029664652769650}
+  - component: {fileID: 8296570123584808571}
   m_Layer: 5
   m_Name: Start
   m_TagString: Untagged
@@ -435,6 +468,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8296570123584808571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6404144708418833931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f488028a7eb05a04bb9f2fff3415405a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationFx
+  scaleAmount: 0.15
+  speed: 8
+  rotationAmount: 8
 --- !u!1 &7233932831651031707
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,6 +494,7 @@ GameObject:
   - component: {fileID: 7622338282420427831}
   - component: {fileID: 3862880310844972471}
   - component: {fileID: 8624464184389225694}
+  - component: {fileID: 2504816912951527836}
   m_Layer: 5
   m_Name: Logo
   m_TagString: Untagged
@@ -510,6 +559,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2504816912951527836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7233932831651031707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f488028a7eb05a04bb9f2fff3415405a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationFx
+  scaleAmount: 0.15
+  speed: 8
+  rotationAmount: 8
 --- !u!1 &8501020174341400617
 GameObject:
   m_ObjectHideFlags: 0
