@@ -10,6 +10,7 @@ namespace SibGameJam2026.MergeService {
 		public string Name;
 		public string Description;
 		public EItemType ItemType;
+		public ESoundType SoundType;
 		public Sprite Icon;
 		public AssetReference Prefab;
 	}

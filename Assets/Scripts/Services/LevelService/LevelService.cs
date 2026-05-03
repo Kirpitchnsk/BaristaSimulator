@@ -42,6 +42,7 @@ namespace SibGameJam2026.Services {
 		private bool _hasActiveLevelLocationHandle;
 		private int _locationLoadVersion;
 
+		public GameSettingsData ActiveLevel => _activeLevel;
 		public int CookFailureCount => _cookFailureCount;
 		public int CookSuccessCount => _cookSuccessCount;
 		public int CurrentActiveClientIndex => _currentActiveClientIndex;
@@ -188,6 +189,16 @@ namespace SibGameJam2026.Services {
 			_isCookTimerRunning = true;
 			_gameplayCanvasController.Value?.SetCookTimerActive(true);
 			_gameplayCanvasController.Value?.UpdateCookTimer(_activeCookDuration, _activeCookDuration);
+		}
+
+		public bool TryGetActiveClientState(out EClientState state) {
+			if (_activeClientNpcState != null) {
+				state = _activeClientNpcState.State;
+				return true;
+			}
+
+			state = default;
+			return false;
 		}
 
 		public void PresentClientOrderUi(ACharacter clientNpc) {

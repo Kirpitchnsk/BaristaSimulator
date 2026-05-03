@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2530831265526165582}
   - component: {fileID: 3017446252988001901}
   - component: {fileID: 2298284251353794347}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9053856919990031688}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 8812200090874953610}
   - component: {fileID: 1667422461446988880}
   - component: {fileID: 5957376495123896299}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 940282137403933678}
   - component: {fileID: 2037083309400425495}
   - component: {fileID: 8338857452177140481}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -315,7 +315,7 @@ GameObject:
   - component: {fileID: 2436350518872437999}
   - component: {fileID: 890807997322333605}
   - component: {fileID: 4563780941350586399}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,7 +405,7 @@ GameObject:
   - component: {fileID: 7103716056223183550}
   - component: {fileID: 710199579429604386}
   - component: {fileID: 8832772586522917936}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -493,7 +493,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3438734673907904570}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -527,7 +527,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2627469357308856015}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Glass (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -563,7 +563,7 @@ GameObject:
   - component: {fileID: 4166770967496585765}
   - component: {fileID: 6048845350671328835}
   - component: {fileID: 9167383205952281068}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -790,7 +790,7 @@ GameObject:
   - component: {fileID: 943411072228030120}
   - component: {fileID: 467188535418008872}
   - component: {fileID: 6360391313440730277}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -982,7 +982,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8359813289152312847}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Glass (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1018,7 +1018,7 @@ GameObject:
   - component: {fileID: 5262302030895045543}
   - component: {fileID: 289576360252333761}
   - component: {fileID: 3052244162081768683}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1108,7 +1108,7 @@ GameObject:
   - component: {fileID: 7370381922200841062}
   - component: {fileID: 9103088870166242994}
   - component: {fileID: 4728783413094524668}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1198,7 +1198,7 @@ GameObject:
   - component: {fileID: 7939960249376318989}
   - component: {fileID: 5889840449869993467}
   - component: {fileID: 1970635605921938316}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1288,7 +1288,7 @@ GameObject:
   - component: {fileID: 6729530304834260281}
   - component: {fileID: 7948499818651046824}
   - component: {fileID: 2750350984524534495}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1378,7 +1378,7 @@ GameObject:
   - component: {fileID: 8613607998391171322}
   - component: {fileID: 7380784387106071627}
   - component: {fileID: 4571458348651129945}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1468,7 +1468,7 @@ GameObject:
   - component: {fileID: 6805768242374300028}
   - component: {fileID: 3170119700047962403}
   - component: {fileID: 8176838881292851649}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1558,7 +1558,7 @@ GameObject:
   - component: {fileID: 7254396763517040730}
   - component: {fileID: 4906710943216626027}
   - component: {fileID: 2560166289570306671}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1648,7 +1648,7 @@ GameObject:
   - component: {fileID: 4847994172538600175}
   - component: {fileID: 3661293852616346775}
   - component: {fileID: 3491516721946299350}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1738,7 +1738,7 @@ GameObject:
   - component: {fileID: 8731835054640231103}
   - component: {fileID: 5957372101596713260}
   - component: {fileID: 8244534208643681110}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1826,7 +1826,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7748101224153065182}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Glass (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1862,7 +1862,7 @@ GameObject:
   - component: {fileID: 3079109743669519715}
   - component: {fileID: 5803539335073787413}
   - component: {fileID: 2941844797489923717}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1952,7 +1952,7 @@ GameObject:
   - component: {fileID: 77662992877083453}
   - component: {fileID: 1934460412028726621}
   - component: {fileID: 5033405231551118550}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HoneySpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1993,6 +1993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4214138ee0da30347b44bc5620d23c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SibGameJam2026.ItemSpawner
+  _interactionSound: 0
   _name: "\u0411\u0430\u043D\u043A\u0438 \u0441 \u043C\u0435\u0434\u043E\u043C"
   _itemId:
     _value: Honey
@@ -2101,7 +2102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4977135005577206759}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Glass (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2137,7 +2138,7 @@ GameObject:
   - component: {fileID: 574576632383625717}
   - component: {fileID: 1581888265307309780}
   - component: {fileID: 5568624820920314473}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -12,19 +12,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79979713c250af9478f94ef1b6c8da4f, type: 3}
   m_Name: Sounds Library
   m_EditorClassIdentifier: 
-  groundStepSounds:
+  _sounds:
     IsSingleLineView: 1
     list:
     - Key: 1
       Value:
-      - {fileID: 8300000, guid: 72f526a6a9890f643a88e85a61c86c8a, type: 3}
-      - {fileID: 8300000, guid: 85016e0f2b01da248b9663dd49a161b0, type: 3}
-      - {fileID: 8300000, guid: 186de84b3207156479abe98f4958fed0, type: 3}
-      - {fileID: 8300000, guid: 1a91fcd19acf1e54bba0945d9f390849, type: 3}
-      - {fileID: 8300000, guid: 14e8a8d2158bec840b56c54f5266e692, type: 3}
-      - {fileID: 8300000, guid: 29841e7d5bbfb5b419c9ad16ca8bc4c1, type: 3}
-      - {fileID: 8300000, guid: dd1af302b8902684d9381de1f2d3a5af, type: 3}
-      - {fileID: 8300000, guid: 67c8b33e424ccdc4486edf538ab91c5a, type: 3}
-      - {fileID: 8300000, guid: 274649b0e221539409070ebf6c18918b, type: 3}
-      - {fileID: 8300000, guid: a3194b8bbc96ef84fab1f98f4b7dae3e, type: 3}
+      - {fileID: 8300000, guid: 8bcfcb50ceed4f442b8d21ff90ff9369, type: 3}
+      - {fileID: 8300000, guid: 79f90830f29575545aa8a51162d69cb7, type: 3}
+    - Key: 2
+      Value:
+      - {fileID: 8300000, guid: 4bc4e25c911bfba48a952f41ce5b6a87, type: 3}
+      - {fileID: 8300000, guid: 6d50c54c1eef3cb439a59a1ff624bd69, type: 3}
+      - {fileID: 8300000, guid: 0024dfe9c2330b24f90469e6f689c29f, type: 3}
+    - Key: 5
+      Value:
+      - {fileID: 8300000, guid: 67e27bb3c3c84064f952e47cb1f7c7ef, type: 3}
+      - {fileID: 8300000, guid: 6e1305e1acc1e704d8b38d8ff4764c9e, type: 3}
+    - Key: 9
+      Value:
+      - {fileID: 8300000, guid: aec78fc587cb2fe4781f4cbafeb54fde, type: 3}
+      - {fileID: 8300000, guid: 6df81fc5cc7833141a8281e153c0cf0f, type: 3}
+    - Key: 10
+      Value:
+      - {fileID: 8300000, guid: b536db6c2ddbaac44a01a7ad8de468ef, type: 3}
+      - {fileID: 8300000, guid: 663a8a46db5f9074daca718b221482ee, type: 3}
+      - {fileID: 8300000, guid: a8b16eaf89d225a4fbc9bad246d2ea59, type: 3}
+    - Key: 7
+      Value:
+      - {fileID: 8300000, guid: abf2d78de1a84624b878257f947fa83a, type: 3}
+      - {fileID: 8300000, guid: 5ce1ab3356681164f89f9c582c7bb95a, type: 3}
+    - Key: 3
+      Value:
+      - {fileID: 8300000, guid: e3b77c50d69eeab4f8554d18b2e3ce4f, type: 3}
+      - {fileID: 8300000, guid: db17452c9381e494299f4611fe134386, type: 3}
+      - {fileID: 8300000, guid: 20756f318d5cbe8429db9fd27b61f8b7, type: 3}
   attackSounds: []

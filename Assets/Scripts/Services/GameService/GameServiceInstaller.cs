@@ -5,6 +5,7 @@ namespace SibGameJam2026.Services {
 		public override void InstallBindings() {
 			Container.BindInterfacesAndSelfTo<LevelService>().AsSingle();
 			Container.BindInterfacesAndSelfTo<GameService>().AsSingle().NonLazy();
+			Container.Bind<IInteractionSoundService>().To<InteractionSoundService>().AsSingle();
 		}
 	}
 }

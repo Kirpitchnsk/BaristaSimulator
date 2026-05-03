@@ -122,10 +122,10 @@ namespace SibGameJam2026 {
 		}
 
 		private void PlayProcessingSquash() {
-			var visual = _processingVisualTransform != null ? _processingVisualTransform : transform;
-			ItemProcessingSquashAnimation.Start(
+			ItemProcessingSquashAnimation.StartOnTransform(
 				ref _squashState,
-				visual,
+				_processingVisualTransform,
+				transform,
 				_squashHalfCycleSeconds,
 				_squashXZStretch,
 				_squashYMul);
