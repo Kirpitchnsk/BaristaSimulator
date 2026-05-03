@@ -35,3 +35,36 @@ MonoBehaviour:
       m_SubObjectType: 
       m_SubObjectGUID: 
       m_EditorAssetChanged: 0
+  - <ECharacterType>k__BackingField: 2
+    <Health>k__BackingField: 100
+    <MoveSpeed>k__BackingField: 3
+    <RotationSpeed>k__BackingField: 360
+    <JumpForce>k__BackingField: 5
+    <CharacterPrefab>k__BackingField:
+      m_AssetGUID: 07b6a77aae77cff42bd1bb3e96c9b8b6
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - <ECharacterType>k__BackingField: 3
+    <Health>k__BackingField: 100
+    <MoveSpeed>k__BackingField: 3
+    <RotationSpeed>k__BackingField: 360
+    <JumpForce>k__BackingField: 5
+    <CharacterPrefab>k__BackingField:
+      m_AssetGUID: d8f0fd2ea7b67eb4181d39710e408b37
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - <ECharacterType>k__BackingField: 4
+    <Health>k__BackingField: 100
+    <MoveSpeed>k__BackingField: 3
+    <RotationSpeed>k__BackingField: 360
+    <JumpForce>k__BackingField: 5
+    <CharacterPrefab>k__BackingField:
+      m_AssetGUID: d8f0fd2ea7b67eb4181d39710e408b37
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0

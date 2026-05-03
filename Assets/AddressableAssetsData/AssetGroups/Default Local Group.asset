@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: 7f7fba132cb08814b923dff250229858
   m_SerializeEntries:
+  - m_GUID: 07b6a77aae77cff42bd1bb3e96c9b8b6
+    m_Address: Assets/Content/Prefabs/Characters/Client2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 143e0429091350748a296eafa1616e19
     m_Address: Assets/Content/Prefabs/Characters/Client1.prefab
     m_ReadOnly: 0
@@ -72,6 +77,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: caed1593a04c90a4ab14e26c7d4f28b6
     m_Address: Assets/Content/Prefabs/Main Camera.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d8f0fd2ea7b67eb4181d39710e408b37
+    m_Address: Assets/Content/Prefabs/Characters/Client3.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

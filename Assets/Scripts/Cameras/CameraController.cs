@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 using SibGameJam2026.Services;
 using SibGameJam2026.Characters;
 using Zenject;
@@ -7,7 +8,8 @@ using Zenject;
 namespace SibGameJam2026.Cameras {
 	public class CameraController : MonoBehaviour {
 		[SerializeField] private Vector3 _localOffset = Vector3.zero;
-		[SerializeField] private float _lookSensitivity = 120f;
+		[SerializeField] private float _mouseLookSensitivity = 0.08f;
+		[SerializeField, FormerlySerializedAs("_lookSensitivity")] private float _stickLookSensitivity = 180f;
 		[SerializeField] private float _bodyFollowYawSpeed = 360f;
 		[SerializeField] private float _lookDeadZone = 0.1f;
 		[SerializeField] private float _minPitch = -80f;
@@ -42,14 +44,18 @@ namespace SibGameJam2026.Cameras {
 				return;
 			}
 
-			var lookInput = _inputService.GetVector(_lookVectorAction);
+			var lookInput = _inputService.GetCameraLook(
+				_lookVectorAction,
+				_mouseLookSensitivity,
+				_stickLookSensitivity,
+				Time.deltaTime);
 
 			if (Mathf.Abs(lookInput.x) > _lookDeadZone) {
-				_yaw += lookInput.x * _lookSensitivity * Time.deltaTime;
+				_yaw += lookInput.x;
 			}
 
 			if (Mathf.Abs(lookInput.y) > _lookDeadZone) {
-				_pitch = Mathf.Clamp(_pitch - lookInput.y * _lookSensitivity * Time.deltaTime, _minPitch, _maxPitch);
+				_pitch = Mathf.Clamp(_pitch - lookInput.y, _minPitch, _maxPitch);
 			}
 
 			if (YawTarget != null) {
