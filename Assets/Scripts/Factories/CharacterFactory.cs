@@ -50,8 +50,15 @@ namespace SibGameJam2026.Characters {
 			character.transform.position = spawnPosition;
 			
 			character.Initialize(CreateComponents(entry, character));
-			
-			return character;
+            var anim = character.GetComponentInChildren<PokupatellAnimateControl>();
+            if (anim != null)
+            {
+                anim.Init(character);
+            }
+
+      
+
+            return character;
 		}
 
 		private IReadOnlyDictionary<Type, ICharacterComponent> CreateComponents(
