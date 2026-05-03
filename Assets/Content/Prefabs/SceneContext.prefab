@@ -132,6 +132,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae1b9d3cfcbf16942a6acbbd07b3ceec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SibGameJam2026.Cameras.CameraInstaller
+--- !u!1 &5038518484463892927
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8612627646733862295}
+  - component: {fileID: 3189665104419015669}
+  m_Layer: 0
+  m_Name: Options
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8612627646733862295
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5038518484463892927}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5812363874582052667}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3189665104419015669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5038518484463892927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4399ddbcd25861640b747484862da66c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Arenar.Options.OptionsSystemServiceInstaller
 --- !u!1 &5598248174685009561
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,6 +261,7 @@ Transform:
   - {fileID: 1263509001371979310}
   - {fileID: 4253586494251884603}
   - {fileID: 3113493605043013724}
+  - {fileID: 8612627646733862295}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2523570053868922638
@@ -249,6 +294,7 @@ MonoBehaviour:
   - {fileID: 4767601045667495588}
   - {fileID: 3575427503140608921}
   - {fileID: 2431689283650793385}
+  - {fileID: 3189665104419015669}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:

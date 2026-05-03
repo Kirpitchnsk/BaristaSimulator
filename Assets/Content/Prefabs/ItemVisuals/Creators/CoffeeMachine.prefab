@@ -996,6 +996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70f5c7e389e84395b9853edb1a66af74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SibGameJam2026.ItemMergerActivator
+  _interactionSound: 0
   _name: "\u0417\u0410\u041F\u0423\u0421\u041A\u0410\u0419"
   itemMerger: {fileID: 4314118585171834307}
 --- !u!65 &975497968969849710
@@ -1663,9 +1664,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b5128d341a4404d92d4c57083cb6cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SibGameJam2026.CoffeeMachine
+  _interactionSound: 0
   _name: "\u041A\u043E\u0444\u0435 \u043C\u0430\u0448\u0438\u043D\u043A\u0430"
   _supportedInputTypes: 0201
-  _maxBufferedItems: 2
+  _maxBufferedItems: 4
   _processingTimeSeconds: 8
   _inputItemPositions:
   - {fileID: 2735181750801894301}

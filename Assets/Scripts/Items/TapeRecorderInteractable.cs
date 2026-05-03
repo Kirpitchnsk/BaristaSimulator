@@ -15,8 +15,9 @@ namespace SibGameJam2026.Items {
 	/// Пока играет трек — squash-анимация как у <see cref="ItemTransformer"/> / <see cref="ItemMerger"/> (<see cref="ItemProcessingSquashAnimation"/>).
 	/// </summary>
 	[DisallowMultipleComponent]
-	public class TapeRecorderInteractable : MonoBehaviour, IInteractable {
+	public class TapeRecorderInteractable : MonoBehaviour, IInteractable, ISound {
 		[SerializeField] private string _interactItemName = "Магнитофон";
+		[SerializeField] private ESoundType _interactionSound = ESoundType.TypeRecorder;
 		[SerializeField] private AudioSource _audioSource;
 		[SerializeField] private LocationPlaylist[] _playlists = Array.Empty<LocationPlaylist>();
 
@@ -42,6 +43,8 @@ namespace SibGameJam2026.Items {
 		private ItemProcessingSquashState _squashState;
 
 		public string InteractItemName => _interactItemName;
+
+		public ESoundType InteractionSound => _interactionSound;
 
 		[Inject]
 		private void Construct(ILevelService levelService, IAudioSystemManager audioSystemManager, AudioLibrary audioLibrary) {

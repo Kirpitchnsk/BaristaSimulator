@@ -157,7 +157,7 @@ MonoBehaviour:
     ItemType: 4
     Icon: {fileID: 0}
     Prefab:
-      m_AssetGUID: 
+      m_AssetGUID: 7156e42b6a4708f46b21624a712a9bc9
       m_SubObjectName: 
       m_SubObjectType: 
       m_SubObjectGUID: 
@@ -184,7 +184,7 @@ MonoBehaviour:
     ItemType: 4
     Icon: {fileID: 0}
     Prefab:
-      m_AssetGUID: 
+      m_AssetGUID: 3e45c29bb20b0df469ea533a49c46a21
       m_SubObjectName: 
       m_SubObjectType: 
       m_SubObjectGUID: 

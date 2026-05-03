@@ -1,4 +1,6 @@
+using Arenar.AudioSystem;
 using SibGameJam2026.Characters.Components;
+using UnityEngine;
 
 namespace SibGameJam2026.Characters {
 	public class ClientCharacter : SimpleCharacter, IInteractable {
