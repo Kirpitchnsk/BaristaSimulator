@@ -9,6 +9,8 @@ namespace SibGameJam2026 {
 		[field: SerializeField] public Item ItemData { get; private set; }
 		public ItemId ItemId => ItemData.ItemId;
 
+		public string InteractItemName => ItemData.Name;
+
 		private void Awake() {
 			if (InteractionCollider == null)
 				InteractionCollider = GetComponent<Collider>();

@@ -67,6 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4214138ee0da30347b44bc5620d23c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SibGameJam2026.ItemSpawner
+  _name: "\u041A\u043E\u0440\u043E\u0431\u043A\u0430 \u0441 \u043A\u043E\u0444\u0435"
   _itemId:
     _value: CoffeeBeans
 --- !u!1 &6076888806589348905

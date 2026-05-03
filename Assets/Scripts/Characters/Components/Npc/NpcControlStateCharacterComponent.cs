@@ -1,16 +1,12 @@
 using System;
 using SibGameJam2026.Characters;
-using SibGameJam2026.Services;
 using UnityEngine;
-using Zenject;
 
 namespace SibGameJam2026.Characters.Components {
 	public class NpcControlStateCharacterComponent : INpcControlStateCharacterComponent, IUpdatable {
 		private readonly ACharacter _character;
 		private readonly NpcControlStateAuthoring _authoring;
-		private readonly LazyInject<ILevelService> _levelService;
 		private EClientState _state = EClientState.WalkToOrder;
-		private float _cookDeadline;
 
 		public ACharacter Character => _character;
 
@@ -20,12 +16,10 @@ namespace SibGameJam2026.Characters.Components {
 
 		public NpcControlStateCharacterComponent(
 			ACharacter character,
-			NpcControlStateAuthoring authoring,
-			LazyInject<ILevelService> levelService
+			NpcControlStateAuthoring authoring
 		) {
 			_character = character;
 			_authoring = authoring;
-			_levelService = levelService;
 		}
 
 		public void SetState(EClientState next) {
@@ -70,9 +64,6 @@ namespace SibGameJam2026.Characters.Components {
 		private void OnEnteredState(EClientState entered) {
 			switch (entered) {
 				case EClientState.WaitCooking:
-					_cookDeadline = _authoring.CookTimeoutSeconds > 0f
-						? Time.time + _authoring.CookTimeoutSeconds
-						: float.PositiveInfinity;
 					StopMovement();
 					break;
 				case EClientState.WaitInteraction:
@@ -96,14 +87,7 @@ namespace SibGameJam2026.Characters.Components {
 		}
 
 		private void UpdateWaitCooking() {
-			if (_authoring.CookTimeoutSeconds <= 0f)
-				return;
-			if (Time.time < _cookDeadline)
-				return;
-
-			_authoring.RaiseCookTimedOut();
-			_levelService.Value?.SetCookFailed();
-			SetState(EClientState.NonTransformed);
+			// Таймер ожидания теперь считается в LevelService.
 		}
 
 		private void UpdateTransform() {

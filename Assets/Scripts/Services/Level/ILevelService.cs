@@ -10,12 +10,17 @@ namespace SibGameJam2026.Services {
 
 		/// <param name="levelKey">Ключ <see cref="SibGameJam2026.Settings.GameSettingsData.Key"/>; null или пусто — первый элемент массива настроек.</param>
 		void BeginLevel(string levelKey = null);
+		void EndLevel();
 
 		void AssignCookingDishForClient(ACharacter clientNpc);
 
 		bool TryGetExpectedDish(ACharacter clientNpc, out ItemId dishId);
 
 		void PresentClientOrderUi(ACharacter clientNpc);
+		void StartActiveClientCookingTimer();
+
+		/// <summary>Активный клиент успешно получил нужный напиток — учёт успеха и индикация в UI.</summary>
+		void SetCookSuccess();
 
 		/// <summary>Истёк таймер готовки у активного клиента — учёт провала и индикация в UI.</summary>
 		void SetCookFailed();

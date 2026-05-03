@@ -33,6 +33,7 @@ namespace SibGameJam2026.Characters.Components {
 					_levelService.AssignCookingDishForClient(_character);
 					_levelService.PresentClientOrderUi(_character);
 					_npcState.SetState(EClientState.WaitCooking);
+					_levelService.StartActiveClientCookingTimer();
 					break;
 				case EClientState.WaitCooking:
 					if (!_levelService.TryGetExpectedDish(_character, out var expectedDish)) {
@@ -42,6 +43,8 @@ namespace SibGameJam2026.Characters.Components {
 
 					var served = context.UsedItem;
 					var isSuccess = served.ItemId == expectedDish;
+					if (isSuccess)
+						_levelService.SetCookSuccess();
 					_npcState.SetState(isSuccess ? EClientState.TransformCreatureSuccess : EClientState.TransformCreatureFailed);
 
 					if (context.UserCharacter.TryGetComponent<IInventoryComponent>(out var userInventory)
