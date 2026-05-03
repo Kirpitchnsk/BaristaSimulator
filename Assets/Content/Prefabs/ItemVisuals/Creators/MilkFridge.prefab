@@ -525,6 +525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4214138ee0da30347b44bc5620d23c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SibGameJam2026.ItemSpawner
+  _name: "\u0425\u043E\u043B\u043E\u0434\u043E\u0441 \u0441 \u043C\u043E\u043B\u043E\u043A\u043E\u043C"
   _itemId:
     _value: Milk
 --- !u!1 &8315494105622051999

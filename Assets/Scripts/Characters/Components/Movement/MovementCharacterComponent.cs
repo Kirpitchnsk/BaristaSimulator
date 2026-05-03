@@ -18,6 +18,8 @@ namespace SibGameJam2026.Characters.Components {
 			_character = character;
 			_transform = character.transform;
 			_characterController = character.Data.CharacterController;
+			if (_characterController != null)
+				_characterController.stepOffset = 0f; // Disable automatic stepping up on obstacle edges.
 			MoveSpeed = entry.MoveSpeed;
 			RotationSpeed = entry.RotationSpeed;
 		}
