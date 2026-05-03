@@ -20,7 +20,7 @@ MonoBehaviour:
       \u0432\u043E\u0434\u0430"
     ItemType: 2
     SoundType: 8
-    Icon: {fileID: 0}
+    Icon: {fileID: 21300000, guid: 828ddee89581d694d9cc5294c35d61cc, type: 3}
     Prefab:
       m_AssetGUID: 8bc85407c3c9e1b4c9d653d14105fcc0
       m_SubObjectName: 
@@ -34,7 +34,7 @@ MonoBehaviour:
       \u0432\u043E\u0434\u0430"
     ItemType: 2
     SoundType: 8
-    Icon: {fileID: 0}
+    Icon: {fileID: 21300000, guid: dfed92f3f47cf7041a61fb1c1a33a497, type: 3}
     Prefab:
       m_AssetGUID: 759e5f9523aff664aada567837617551
       m_SubObjectName: 
@@ -48,7 +48,7 @@ MonoBehaviour:
       \u0437\u0435\u0440\u0435\u043D"
     ItemType: 1
     SoundType: 6
-    Icon: {fileID: 0}
+    Icon: {fileID: 21300000, guid: cb7d216201f21be488bfe1a129d1b3c2, type: 3}
     Prefab:
       m_AssetGUID: fbc25359ea8501646b140dc51893a74d
       m_SubObjectName: 
@@ -61,7 +61,7 @@ MonoBehaviour:
     Description: "\u041A\u043E\u0444\u0435 \u0434\u043B\u044F \u0437\u0430\u0432\u0430\u0440\u043A\u0438"
     ItemType: 1
     SoundType: 6
-    Icon: {fileID: 0}
+    Icon: {fileID: 21300000, guid: 2de6902423d1df443a48df711bf4b2ac, type: 3}
     Prefab:
       m_AssetGUID: 
       m_SubObjectName: 
@@ -75,7 +75,7 @@ MonoBehaviour:
       \u0431\u0435\u0437 \u043F\u0440\u0435\u043A\u0440\u0430\u0441"
     ItemType: 3
     SoundType: 0
-    Icon: {fileID: 0}
+    Icon: {fileID: 21300000, guid: e60eb5aaf9b0c6841a7e943cfcd9de18, type: 3}
     Prefab:
       m_AssetGUID: 8b83ca912d613f145ab2deee727df8b3
       m_SubObjectName: 
@@ -88,7 +88,7 @@ MonoBehaviour:
     Description: "\u041F\u0440\u043E\u0445\u043B\u0430\u0434\u043D\u043E\u0435 \u043C\u043E\u043B\u043E\u043A\u043E"
     ItemType: 2
     SoundType: 9
-    Icon: {fileID: 0}
+    Icon: {fileID: 21300000, guid: 02fcbbe0eae34554c9dd647bd0a14e08, type: 3}
     Prefab:
       m_AssetGUID: 85caaec4cd51af44fb2e9bac74e5909d
       m_SubObjectName: 
@@ -101,7 +101,7 @@ MonoBehaviour:
     Description: "\u0421\u043B\u0430\u0434\u043A\u0438\u0439 \u043F\u043E\u0440\u043E\u0448\u043E\u043A"
     ItemType: 4
     SoundType: 10
-    Icon: {fileID: 0}
+    Icon: {fileID: 21300000, guid: d51bb34f904b63649832d9270a037fa3, type: 3}
     Prefab:
       m_AssetGUID: 2140dedce2406c347a0c16bc837fb41b
       m_SubObjectName: 
@@ -114,7 +114,7 @@ MonoBehaviour:
     Description: "\u0412 \u0432\u0438\u0434\u0435 \u043A\u0443\u0431\u0438\u043A\u043E\u0432"
     ItemType: 4
     SoundType: 3
-    Icon: {fileID: 0}
+    Icon: {fileID: 21300000, guid: b6403b3e3525d9a40a73fdc7de69d9c8, type: 3}
     Prefab:
       m_AssetGUID: 66bc0bd1bcab798429ec6c702c2a0940
       m_SubObjectName: 
@@ -127,7 +127,7 @@ MonoBehaviour:
     Description: "\u0421\u043B\u0430\u0434\u043A\u0430\u044F \u0442\u044F\u043D\u0443\u0447\u043A\u0430"
     ItemType: 4
     SoundType: 0
-    Icon: {fileID: 0}
+    Icon: {fileID: 21300000, guid: ffc4dbdb807363c42afc01f6a4977962, type: 3}
     Prefab:
       m_AssetGUID: 5abd3cfed64b28b439d8d9f74415f9e4
       m_SubObjectName: 
@@ -167,7 +167,7 @@ MonoBehaviour:
     Description: "\u0412 \u0432\u0438\u0434\u0435 \u043F\u0430\u043B\u043E\u0447\u0435\u043A"
     ItemType: 4
     SoundType: 7
-    Icon: {fileID: 0}
+    Icon: {fileID: 21300000, guid: 4c74dabb5ba090643b48994bb9fef653, type: 3}
     Prefab:
       m_AssetGUID: 7156e42b6a4708f46b21624a712a9bc9
       m_SubObjectName: 
@@ -182,7 +182,7 @@ MonoBehaviour:
       \u0441\u0435\u043C\u0435\u043D\u0430\u043C\u0438 \u0432\u043D\u0443\u0442\u0440\u0438"
     ItemType: 4
     SoundType: 0
-    Icon: {fileID: 0}
+    Icon: {fileID: 21300000, guid: 4c74dabb5ba090643b48994bb9fef653, type: 3}
     Prefab:
       m_AssetGUID: 
       m_SubObjectName: 
@@ -196,7 +196,7 @@ MonoBehaviour:
       \u0432 \u043F\u0430\u043B\u043E\u0447\u043A\u0430\u0445"
     ItemType: 4
     SoundType: 0
-    Icon: {fileID: 0}
+    Icon: {fileID: 21300000, guid: c5a999d9711c46b49bdfada6d01e7511, type: 3}
     Prefab:
       m_AssetGUID: 3e45c29bb20b0df469ea533a49c46a21
       m_SubObjectName: 
@@ -210,7 +210,7 @@ MonoBehaviour:
       + \u0432\u0430\u043D\u0438\u043B\u044C\u043D\u044B\u0439 \u0441\u0442\u0440\u0443\u0447\u043E\u043A"
     ItemType: 4
     SoundType: 0
-    Icon: {fileID: 0}
+    Icon: {fileID: 21300000, guid: e07329d751a6a174e899b2191a6b9438, type: 3}
     Prefab:
       m_AssetGUID: 
       m_SubObjectName: 
@@ -225,7 +225,7 @@ MonoBehaviour:
       \u043A\u043E\u0444\u0435"
     ItemType: 4
     SoundType: 0
-    Icon: {fileID: 0}
+    Icon: {fileID: 21300000, guid: 2de6902423d1df443a48df711bf4b2ac, type: 3}
     Prefab:
       m_AssetGUID: 
       m_SubObjectName: 
@@ -239,7 +239,7 @@ MonoBehaviour:
       + \u043C\u043E\u043B\u043E\u043A\u043E + \u043B\u0451\u0434 + \u0441\u0430\u0445\u0430\u0440"
     ItemType: 4
     SoundType: 0
-    Icon: {fileID: 0}
+    Icon: {fileID: 21300000, guid: c5a999d9711c46b49bdfada6d01e7511, type: 3}
     Prefab:
       m_AssetGUID: 
       m_SubObjectName: 
