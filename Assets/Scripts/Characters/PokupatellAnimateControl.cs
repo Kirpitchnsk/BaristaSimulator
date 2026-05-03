@@ -1,7 +1,6 @@
+using UnityEngine;
 using SibGameJam2026.Characters;
 using SibGameJam2026.Characters.Components;
-using UnityEngine;
-using Zenject;
 
 public class PokupatellAnimateControl : MonoBehaviour
 {
@@ -12,19 +11,13 @@ public class PokupatellAnimateControl : MonoBehaviour
     private static readonly int IsAnimating = Animator.StringToHash("IsRun");
     private static readonly int Drink = Animator.StringToHash("Drink");
 
-    [Inject]
-    public void Construct(INpcControlStateCharacterComponent stateComponent)
+    public void Init(ACharacter character)
     {
-        this.stateComponent = stateComponent;
+        stateComponent = character.GetComponent<INpcControlStateCharacterComponent>();
+        stateComponent.StateChanged += OnStateChanged;
     }
 
-    private void OnEnable()
-    {
-        if (stateComponent != null)
-            stateComponent.StateChanged += OnStateChanged;
-    }
-
-    private void OnDisable()
+    private void OnDestroy()
     {
         if (stateComponent != null)
             stateComponent.StateChanged -= OnStateChanged;
@@ -48,8 +41,7 @@ public class PokupatellAnimateControl : MonoBehaviour
                 animator.SetTrigger(Drink);
                 break;
 
-            case EClientState.TransformCreatureSuccess:
-            case EClientState.TransformCreatureFailed:
+            default:
                 animator.SetBool(IsAnimating, false);
                 break;
         }
