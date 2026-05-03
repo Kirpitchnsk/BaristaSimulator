@@ -57,8 +57,7 @@ namespace SibGameJam2026.Characters {
 		) {
 			return entry.ECharacterType switch {
 				ECharacterType.Player => CreatePlayerComponents(entry, character),
-				ECharacterType.Client => CreateClientComponents(entry, character),
-				_ => throw new ArgumentOutOfRangeException(nameof(entry.ECharacterType), entry.ECharacterType, "Unknown character type")
+				_ => CreateClientComponents(entry, character),
 			};
 		}
 

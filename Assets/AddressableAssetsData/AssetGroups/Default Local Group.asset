@@ -13,10 +13,35 @@ MonoBehaviour:
   m_Name: Default Local Group
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
   m_GroupName: Default Local Group
-  m_GUID: 7f7fba132cb08814b923dff250229858
+  m_GUID: f83b5ad63ebc6c34f8d8cd2a7c01406e
   m_SerializeEntries:
+  - m_GUID: 07b6a77aae77cff42bd1bb3e96c9b8b6
+    m_Address: Assets/Content/Prefabs/Characters/Client2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0da74e9785134914c9776480652603fe
+    m_Address: Assets/Content/Prefabs/ItemVisuals/LemonWater_ItemVisual.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1040db9806cf42441a8aa89ba0df220d
+    m_Address: Assets/Content/Prefabs/Characters/Client4.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 143e0429091350748a296eafa1616e19
     m_Address: Assets/Content/Prefabs/Characters/Client1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 190c703de1f6bf248b0fdd2198e31a7b
+    m_Address: Assets/Content/Prefabs/ItemVisuals/DragonCaramel_ItemVisual.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1b61ceaeb25faac4a9cb22414c17c1c9
+    m_Address: Assets/Content/Prefabs/ItemVisuals/DarkPurplePoyhedron_ItemVisual.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -25,8 +50,28 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3714dbdb72891af4b9baffd182353385
+    m_Address: Assets/Content/Prefabs/ItemVisuals/BlackHole_ItemVisual.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3befedcdb4fe24a48ad5bbb3bba81cce
     m_Address: Assets/Content/Prefabs/Locations/Kosmos World.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3e45c29bb20b0df469ea533a49c46a21
+    m_Address: Assets/Content/Prefabs/ItemVisuals/HoneyCaramel_ItemVisual.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 402bc6a274b35b146a5a269cb020b361
+    m_Address: Assets/Content/Prefabs/ItemVisuals/ChocolateSyrip_ItemVisual.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 57aa4e06a10232d4fb77e03e3298d846
+    m_Address: Assets/Content/Prefabs/ItemVisuals/AngillarSyrip_ItemVisual.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -40,8 +85,28 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6c27ca4c88dcec6478837aacc4aaff65
+    m_Address: Assets/Content/Prefabs/Characters/Client5.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7156e42b6a4708f46b21624a712a9bc9
+    m_Address: Assets/Content/Prefabs/ItemVisuals/Cinnamon_ItemVisual.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 71b5ceb148dfc2a47ad7e06053169e3d
+    m_Address: Assets/Content/Prefabs/ItemVisuals/MeteorPollen_ItemVisual.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 759e5f9523aff664aada567837617551
-    m_Address: Assets/Content/Prefabs/ItemVisuals/HotWaterItemData.prefab
+    m_Address: Assets/Content/Prefabs/ItemVisuals/HotWater_itemVisual.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 77db148dc4fc46b49bc52bb987e6391b
+    m_Address: Assets/Content/Prefabs/ItemVisuals/Chocolate_ItemVisual.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -65,13 +130,48 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9edfd626ad5ec584b93eabe2a1fb1309
+    m_Address: Assets/Content/Prefabs/ItemVisuals/VanllaPod_ItemVisual.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b040e7da2f31c6a449dc62652d8fe9a9
+    m_Address: Assets/Content/Prefabs/ItemVisuals/AntiGravityBubless_ItemVisual.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bb6db09928a639d49b0e25d90aa1c846
+    m_Address: Assets/Content/Prefabs/ItemVisuals/GhostSyrip_ItemVisual.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c605eb7d0b797ab4f9ec75cc61d0704a
-    m_Address: Assets/Content/Prefabs/Player.prefab
+    m_Address: Assets/Content/Prefabs/Characters/Player.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ca131991e6ba05945a3a844bb88f5f86
+    m_Address: Assets/Content/Prefabs/ItemVisuals/GoldenNectar_ItemVisual.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: caed1593a04c90a4ab14e26c7d4f28b6
-    m_Address: Assets/Content/Prefabs/Main Camera.prefab
+    m_Address: Assets/Content/Prefabs/Cameras/Main Camera.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cd9dc55ce4c1fd344bcdcf2a28813b9c
+    m_Address: Assets/Content/Prefabs/ItemVisuals/PulsarJuice_ItemVisual.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d8f0fd2ea7b67eb4181d39710e408b37
+    m_Address: Assets/Content/Prefabs/Characters/Client3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f55c281e46aa9b64da1873e10057486d
+    m_Address: Assets/Content/Prefabs/ItemVisuals/WhiteCrystall_ItemVisual.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
